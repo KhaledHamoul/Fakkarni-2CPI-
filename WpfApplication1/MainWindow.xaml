@@ -136,7 +136,7 @@
         <Image x:Name="minimize" Height="3" Source="icons/minimize.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,169.833,518.33,0" Panel.ZIndex="1" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" HorizontalAlignment="Right" Width="12"/>
         <Rectangle x:Name="minimizeBtn" Height="33.999" VerticalAlignment="Top" Margin="741.67,154.001,0,0" Panel.ZIndex="0" HorizontalAlignment="Left" Width="26" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" Opacity="0" Fill="Black"/>
         <Rectangle x:Name="closeBtnBack" Height="33.999" VerticalAlignment="Top" Margin="0,154.001,485.5,0" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" Opacity="0" Fill="White" HorizontalAlignment="Right" Width="26"/>
-        <Label x:Name="connexionLabel" Content="Connexion" Margin="631.67,0,0,162.49" FontSize="14" FontFamily="Comic Sans MS" Foreground="White" Cursor="Hand" VerticalAlignment="Bottom" Width="150" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+        <Label x:Name="connexionLabel" Content="Connexion" Margin="631.67,0,0,162.49" FontSize="14" FontFamily="Comic Sans MS" Foreground="White" Cursor="Hand" VerticalAlignment="Bottom" Width="150" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" MouseDown="connexion_Click">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

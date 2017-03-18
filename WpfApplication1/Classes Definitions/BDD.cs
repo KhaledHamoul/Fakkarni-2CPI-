@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows;
 
@@ -447,22 +448,21 @@ namespace WpfApplication1
             else return null;
         }
 
-        public Utilisateur[] SelectUsers()
+        public List<Utilisateur> SelectUsers()
         {
             string query = "SELECT * FROM users ;";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
-                Utilisateur[] tab = null;
+                List<Utilisateur> tab = null;
                 try
                 {
                     SqlDataReader reader = cmd.ExecuteReader();
-                    tab = new Utilisateur[max_size];
-                    int i = 0;
+                    tab = new List<Utilisateur>();
                     while (reader.Read())
                     {
-                        tab[i] = new Utilisateur(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
-                        i++;
+                        tab.Add(new Utilisateur(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3)));
+
                     }
                 }
                 catch (SqlException ex)
@@ -558,7 +558,7 @@ namespace WpfApplication1
             }
         }
 
-        public String[] autentification(String nom , String prnom)
+        public String[] autentification(string nom , string prnom)
         {
             string query = "SELECT password FROM users WHERE nom = " + prnom +" ;"; //+ " AND prenom == " + prnom +" ;";
 

@@ -25,12 +25,10 @@ namespace WpfApplication1
             InitializeComponent();
             this.Focusable = true;
             BDD bdd = new BDD();
-            Utilisateur[] user = bdd.SelectUsers();
+            List<Utilisateur> user = bdd.SelectUsers();
             ComboBoxItem item = new ComboBoxItem();
             int i = 0;
-            //item.Content = user[0].Prenom + user[0].Nom;
-            //activeUser.Items.Add(item);
-           // MessageBox.Show(user.Length.ToString());
+           
            while (user[i] != null)
             {      
                 item = new ComboBoxItem();
@@ -40,7 +38,7 @@ namespace WpfApplication1
                 i++;
             }
 
-            MessageBox.Show(bdd.autentification(user[0].Nom, user[0].Prenom)[0]);
+           // MessageBox.Show(bdd.autentification(user[0].Nom, user[0].Prenom)[0]);
             
 
         }
@@ -134,5 +132,23 @@ namespace WpfApplication1
              Color color = (Color)ColorConverter.ConvertFromString("#ff0000");
              passWord.BorderThickness = new SolidColorBrush(color);
          }*/
+
+
+        public bool authentifier(int id, string password)
+        {
+            BDD database = new BDD();
+            List<Utilisateur> users = database.SelectUsers();
+            if (users.Contains(new Utilisateur(id, "", "", password))) return true;
+            else return false;
+        }
+
+       
+
+        private void connexion_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (authentifier(int.Parse(((ComboBoxItem)activeUser.SelectedItem).Uid), passWord.Password)) MessageBox.Show("Connection Success");
+            else MessageBox.Show("Wrong Password");
+        }
     }
+
 }
