@@ -25,21 +25,30 @@ namespace WpfApplication1
             InitializeComponent();
             this.Focusable = true;
             BDD bdd = new BDD();
-            List<Utilisateur> user = bdd.SelectUsers();
+            List<Utilisateur> users = bdd.SelectUsers();
             ComboBoxItem item = new ComboBoxItem();
             int i = 0;
-           
-           while (user[i] != null)
-            {      
+
+            for (i = 0; i < users.Count; i++)
+            {
                 item = new ComboBoxItem();
-                item.Content =  user[i].Prenom + "  " + user[i].Nom;
-                item.Name = "user"+(i+1).ToString();
+                item.Content = users[i].Prenom + "  " + users[i].Nom;
+                item.Uid = users[i].Id.ToString();
+                item.Name = "user" + (i + 1).ToString();
                 activeUser.Items.Add(item);
-                i++;
             }
 
-           // MessageBox.Show(bdd.autentification(user[0].Nom, user[0].Prenom)[0]);
-            
+            /*while (i < 2)
+             {      
+                 item = new ComboBoxItem();
+                 item.Content =  user[i].Prenom + "  " + user[i].Nom;
+                 item.Name = "user"+(i+1).ToString();
+                 activeUser.Items.Add(item);
+                 i++;
+             }*/
+
+            // MessageBox.Show(bdd.autentification(user[0].Nom, user[0].Prenom)[0]);
+
 
         }
 
