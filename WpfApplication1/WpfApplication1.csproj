@@ -126,6 +126,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="img\position.png" />
+    <Resource Include="img\phone.png" />
+    <Resource Include="phone-icon-945.png" />
     <Resource Include="Buttons\newSessionButton.png" />
     <Resource Include="Buttons\newSessionButtonHover.png" />
     <Content Include="Database.mdf">
