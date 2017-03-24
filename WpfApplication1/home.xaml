@@ -55,7 +55,7 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid>
-        <Image x:Name="back" Source="img/home_page.png" Margin="-9,-15,-15,-9" Focusable="True" />
+        <Image x:Name="back" Source="img/home_page.png" Margin="-9,-15,-15,-9" Focusable="True" Height="734" Width="1304" />
         <Border BorderThickness="1" Height="40" Margin="0,0,72,0" VerticalAlignment="Top" Background="#00EA3F3F" MouseDown="drag"/>
 
         <Image x:Name="iconClose" HorizontalAlignment="Right" Height="12" Source="icons/closeIcon.png" Stretch="Fill" VerticalAlignment="Top" Width="12" Margin="0,15,10,0" Panel.ZIndex="1" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close"  OpacityMask="Red"/>
