@@ -153,15 +153,15 @@ namespace WpfApplication1 {
         #line hidden
         
         
-        #line 75 "..\..\home.xaml"
+        #line 84 "..\..\home.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Border border;
+        internal System.Windows.Controls.Border homeBorder;
         
         #line default
         #line hidden
         
         
-        #line 76 "..\..\home.xaml"
+        #line 85 "..\..\home.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image eventIcon;
         
@@ -169,7 +169,15 @@ namespace WpfApplication1 {
         #line hidden
         
         
-        #line 78 "..\..\home.xaml"
+        #line 95 "..\..\home.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Border eventBorder;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 96 "..\..\home.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image contactIcon;
         
@@ -177,9 +185,25 @@ namespace WpfApplication1 {
         #line hidden
         
         
-        #line 80 "..\..\home.xaml"
+        #line 106 "..\..\home.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Border contactBorderr;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 107 "..\..\home.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image hoidayIcon;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 117 "..\..\home.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Border holidayBorder;
         
         #line default
         #line hidden
@@ -371,32 +395,39 @@ namespace WpfApplication1 {
             return;
             case 15:
             this.homeIcon = ((System.Windows.Controls.Image)(target));
+            
+            #line 74 "..\..\home.xaml"
+            this.homeIcon.MouseDown += new System.Windows.Input.MouseButtonEventHandler(this.versHome);
+            
+            #line default
+            #line hidden
             return;
             case 16:
-            this.border = ((System.Windows.Controls.Border)(target));
+            this.homeBorder = ((System.Windows.Controls.Border)(target));
+            
+            #line 84 "..\..\home.xaml"
+            this.homeBorder.MouseDown += new System.Windows.Input.MouseButtonEventHandler(this.versHome);
+            
+            #line default
+            #line hidden
             return;
             case 17:
             this.eventIcon = ((System.Windows.Controls.Image)(target));
             return;
             case 18:
-            this.contactIcon = ((System.Windows.Controls.Image)(target));
-            
-            #line 78 "..\..\home.xaml"
-            this.contactIcon.MouseDown += new System.Windows.Input.MouseButtonEventHandler(this.versContact);
-            
-            #line default
-            #line hidden
+            this.eventBorder = ((System.Windows.Controls.Border)(target));
             return;
             case 19:
-            
-            #line 79 "..\..\home.xaml"
-            ((System.Windows.Controls.Border)(target)).MouseDown += new System.Windows.Input.MouseButtonEventHandler(this.versContact);
-            
-            #line default
-            #line hidden
+            this.contactIcon = ((System.Windows.Controls.Image)(target));
             return;
             case 20:
+            this.contactBorderr = ((System.Windows.Controls.Border)(target));
+            return;
+            case 21:
             this.hoidayIcon = ((System.Windows.Controls.Image)(target));
+            return;
+            case 22:
+            this.holidayBorder = ((System.Windows.Controls.Border)(target));
             return;
             }
             this._contentLoaded = true;
