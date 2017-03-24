@@ -24,20 +24,76 @@
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="homeEnter">
-            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border">
-                <EasingColorKeyFrame KeyTime="0" Value="#00000000"/>
-                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#26000000"/>
-            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="homeIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="homeLeave">
-            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)" Storyboard.TargetName="border">
-                <EasingColorKeyFrame KeyTime="0" Value="Black"/>
-                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="Black"/>
-            </ColorAnimationUsingKeyFrames>
-            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border">
-                <EasingColorKeyFrame KeyTime="0" Value="#26000000"/>
-                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#00000000"/>
-            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="homeIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="eventEnter">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="eventIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="eventLeave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="eventIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="contactEnter">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="contactIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="contactLeave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="contactIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="holidayEnter">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="hoidayIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="holidayLeave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="hoidayIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
     <Window.Triggers>
@@ -47,15 +103,33 @@
         <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="aproposBtn">
             <BeginStoryboard x:Name="onMouseLeaveaproposBtn_BeginStoryboard" Storyboard="{StaticResource onMouseLeaveaproposBtn}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="border">
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="homeIcon">
             <BeginStoryboard x:Name="homeEnter_BeginStoryboard" Storyboard="{StaticResource homeEnter}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="border">
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="homeBorder">
             <BeginStoryboard x:Name="homeLeave_BeginStoryboard" Storyboard="{StaticResource homeLeave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="eventBrder">
+            <BeginStoryboard x:Name="eventEnter_BeginStoryboard" Storyboard="{StaticResource eventEnter}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="eventBrder">
+            <BeginStoryboard x:Name="eventLeave_BeginStoryboard" Storyboard="{StaticResource eventLeave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="contactBorder">
+            <BeginStoryboard x:Name="contactEnter_BeginStoryboard" Storyboard="{StaticResource contactEnter}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="contactBorder">
+            <BeginStoryboard x:Name="contactLeave_BeginStoryboard" Storyboard="{StaticResource contactLeave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="holidayBorder">
+            <BeginStoryboard x:Name="holidayEnter_BeginStoryboard" Storyboard="{StaticResource holidayEnter}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="holidayBorder">
+            <BeginStoryboard x:Name="holidayLeave_BeginStoryboard" Storyboard="{StaticResource holidayLeave}"/>
         </EventTrigger>
     </Window.Triggers>
     <Grid>
-        <Image x:Name="back" Source="img/home_page.png" Margin="-9,-15,-15,-9" Focusable="True" Height="734" Width="1304" />
+        <Image x:Name="back" Source="img/home_page.png" Margin="-9,-15,-15,-9" Focusable="True" Height="734" />
         <Border BorderThickness="1" Height="40" Margin="0,0,72,0" VerticalAlignment="Top" Background="#00EA3F3F" MouseDown="drag"/>
 
         <Image x:Name="iconClose" HorizontalAlignment="Right" Height="12" Source="icons/closeIcon.png" Stretch="Fill" VerticalAlignment="Top" Width="12" Margin="0,15,10,0" Panel.ZIndex="1" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close"  OpacityMask="Red"/>
@@ -71,14 +145,50 @@
         <Border x:Name="aproposBtn" BorderThickness="1" HorizontalAlignment="Right" Height="63" Margin="0,0,18,20" VerticalAlignment="Bottom" Width="64" CornerRadius="100" Background="#00000000"/>
 
 
-        <Image x:Name="homeIcon" Source="icons/homeIcon.png" Height="80" Width="80" HorizontalAlignment="Left" Margin="335,70,0,0" VerticalAlignment="Top" Panel.ZIndex="1"/>
-        <Border x:Name="border" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="335,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000" OpacityMask="Black"/>
-        <Image x:Name="eventIcon" Source="icons/eventIcon.png" Height="80" Width="80" Margin="545,70,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" HorizontalAlignment="Left"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="545,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000"/>
-        <Image x:Name="contactIcon" Source="icons/contactIcon.png" Height="80" Width="80" Margin="0,70,460,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height" MouseDown="versContact"/>
-        <Border BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,460,0" VerticalAlignment="Top" Width="80" Background="#00000000" MouseDown="versContact"/>
-        <Image x:Name="hoidayIcon" Source="icons/holidayIcon.png" Height="80" Width="100" Margin="0,72.241,250.518,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height"/>
-        <Border BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,255,0" VerticalAlignment="Top" Width="95.518" Background="#00000000"/>
+        <Image x:Name="homeIcon" Source="icons/homeIcon.png" Height="80" Width="80" HorizontalAlignment="Left" Margin="335,70,0,0" VerticalAlignment="Top" Panel.ZIndex="1" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Border x:Name="homeBorder" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="335,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000" OpacityMask="Black"/>
+        <Image x:Name="eventIcon" Source="icons/eventIcon.png" Height="80" Width="80" Margin="545,70,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Border x:Name="eventBrder" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="545,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000"/>
+        <Image x:Name="contactIcon" Source="icons/contactIcon.png" Height="80" Width="80" Margin="0,70,460,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height" MouseDown="versContact" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Border x:Name="contactBorder" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,460,0" VerticalAlignment="Top" Width="80" Background="#00000000" MouseDown="versContact"/>
+        <Image x:Name="hoidayIcon" Source="icons/holidayIcon.png" Height="80" Width="100" Margin="0,72.241,250.518,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Border x:Name="holidayBorder" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,255,0" VerticalAlignment="Top" Width="95.518" Background="#00000000"/>
 
     </Grid>
 </Window>

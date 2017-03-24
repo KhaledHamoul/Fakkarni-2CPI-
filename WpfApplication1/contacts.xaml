@@ -83,7 +83,7 @@
         </Storyboard>
     </Window.Resources>
     <Window.Triggers>
-        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="contactBorderr">
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="contactBorder">
             <BeginStoryboard x:Name="contactEnter_BeginStoryboard" Storyboard="{StaticResource contactEnter}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="homeBorder">
@@ -95,7 +95,7 @@
         <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="holidayBorder">
             <BeginStoryboard x:Name="holidayEnter_BeginStoryboard" Storyboard="{StaticResource holidayEnter}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="contactBorderr">
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="contactBorder">
             <BeginStoryboard x:Name="contactLeave_BeginStoryboard" Storyboard="{StaticResource contactLeave}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="homeBorder">
@@ -301,7 +301,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Border x:Name="contactBorderr" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,460,0" VerticalAlignment="Top" Width="80" Background="#00000000"/>
+        <Border x:Name="contactBorder" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,460,0" VerticalAlignment="Top" Width="80" Background="#00000000"/>
         <Image x:Name="hoidayIcon" Source="icons/holidayIcon.png" Height="80" Width="100" Margin="0,72.241,250.518,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
