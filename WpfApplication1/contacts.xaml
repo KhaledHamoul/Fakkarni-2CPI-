@@ -19,7 +19,7 @@
         <Image x:Name="minimize" Height="3" Source="icons/minimize.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,19,47,0" Panel.ZIndex="1" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" HorizontalAlignment="Right" Width="12"/>
         <Rectangle x:Name="minimizeBtn" Height="40" VerticalAlignment="Top" Margin="1208,0,0,0" Panel.ZIndex="0" HorizontalAlignment="Left" Width="38" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" Opacity="0" Fill="Black"/>
         <Rectangle x:Name="closeBtnBack" Height="40" VerticalAlignment="Top" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" Opacity="0" Fill="White" HorizontalAlignment="Right" Width="35" Margin="0,0,-1,0"/>
-        <Border BorderBrush="#FF2A84A8" BorderThickness="5,1" HorizontalAlignment="Right" Margin="0,171.512,565.5,-5.512" Width="5"/>
+        <Border BorderBrush="#FF2A84A8" BorderThickness="5,1" HorizontalAlignment="Right" Margin="0,167.512,565.5,-1.512" Width="5"/>
 
 
 
@@ -29,85 +29,158 @@
 
             <!--***************************************************************************-->
 
-            <ListViewItem Padding="10" Background="{x:Null}" BorderBrush="#FF898989"  BorderThickness="0,0,0,1"  >
+            <ListViewItem Padding="10" Background="White" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391"  >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
                     <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 1</TextBlock>
                 </StackPanel>
             </ListViewItem>
 
-            <ListViewItem Padding="10" BorderBrush="#FF898989"  BorderThickness="0,0,0,1">
+            <ListViewItem Padding="10" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391">
+                <ListViewItem.Background>
+                    <SolidColorBrush Color="#FF56A5BA"/>
+                </ListViewItem.Background>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
-                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 2</TextBlock>
+                    <Image Source="img/profilPhotoBlanc.png" Margin="60,0,5,0" Height="45" />
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Foreground="White">Hamoul Khaled 2</TextBlock>
                 </StackPanel>
             </ListViewItem>
 
-            <ListViewItem Padding="10" BorderBrush="#FF898989"  BorderThickness="0,0,0,1">
+            <ListViewItem Padding="10" Background="White" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391"  >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
-                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 3</TextBlock>
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 1</TextBlock>
                 </StackPanel>
             </ListViewItem>
 
-            <ListViewItem Padding="10" BorderBrush="#FF898989"  BorderThickness="0,0,0,1">
+            <ListViewItem Padding="10" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391">
+                <ListViewItem.Background>
+                    <SolidColorBrush Color="#FF56A5BA"/>
+                </ListViewItem.Background>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="img/profilPhotoBlanc.png" Margin="60,0,5,0" Height="45" />
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Foreground="White">Hamoul Khaled 2</TextBlock>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem Padding="10" Background="White" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391"  >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
-                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 4</TextBlock>
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 1</TextBlock>
                 </StackPanel>
             </ListViewItem>
 
-            <ListViewItem Padding="10" BorderBrush="#FF898989"  BorderThickness="0,0,0,1">
+            <ListViewItem Padding="10" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391">
+                <ListViewItem.Background>
+                    <SolidColorBrush Color="#FF56A5BA"/>
+                </ListViewItem.Background>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
-                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 5</TextBlock>
+                    <Image Source="img/profilPhotoBlanc.png" Margin="60,0,5,0" Height="45" />
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Foreground="White">Hamoul Khaled 2</TextBlock>
                 </StackPanel>
             </ListViewItem>
-            <ListViewItem Padding="10" BorderBrush="#FF898989"  BorderThickness="0,0,0,1">
+            <ListViewItem Padding="10" Background="White" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391"  >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
-                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 6</TextBlock>
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 1</TextBlock>
                 </StackPanel>
             </ListViewItem>
 
-            <ListViewItem Padding="10" BorderBrush="#FF898989"  BorderThickness="0,0,0,1">
-                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
-                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 7</TextBlock>
+            <ListViewItem Padding="10" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391">
+                <ListViewItem.Background>
+                    <SolidColorBrush Color="#FF56A5BA"/>
+                </ListViewItem.Background>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="img/profilPhotoBlanc.png" Margin="60,0,5,0" Height="45" />
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Foreground="White">Hamoul Khaled 2</TextBlock>
                 </StackPanel>
             </ListViewItem>
-            <ListViewItem Padding="10" BorderBrush="#FF898989"  BorderThickness="0,0,0,1">
+            <ListViewItem Padding="10" Background="White" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391"  >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
-                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 8</TextBlock>
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 1</TextBlock>
                 </StackPanel>
             </ListViewItem>
-            <ListViewItem Padding="10" BorderBrush="#FF898989"  BorderThickness="0,0,0,1">
+
+            <ListViewItem Padding="10" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391">
+                <ListViewItem.Background>
+                    <SolidColorBrush Color="#FF56A5BA"/>
+                </ListViewItem.Background>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
-                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 9</TextBlock>
+                    <Image Source="img/profilPhotoBlanc.png" Margin="60,0,5,0" Height="45" />
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Foreground="White">Hamoul Khaled 2</TextBlock>
                 </StackPanel>
             </ListViewItem>
-            <ListViewItem Padding="10" BorderBrush="#FF898989"  BorderThickness="0,0,0,1">
+            <ListViewItem Padding="10" Background="White" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391"  >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
-                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 10</TextBlock>
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 1</TextBlock>
                 </StackPanel>
             </ListViewItem>
-            <ListViewItem Padding="10" BorderBrush="#FF898989"  BorderThickness="0,0,0,1">
+
+            <ListViewItem Padding="10" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391">
+                <ListViewItem.Background>
+                    <SolidColorBrush Color="#FF56A5BA"/>
+                </ListViewItem.Background>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="img/profilPhotoBlanc.png" Margin="60,0,5,0" Height="45" />
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Foreground="White">Hamoul Khaled 2</TextBlock>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem Padding="10" Background="White" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391"  >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
-                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 11</TextBlock>
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 1</TextBlock>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Padding="10" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391">
+                <ListViewItem.Background>
+                    <SolidColorBrush Color="#FF56A5BA"/>
+                </ListViewItem.Background>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="img/profilPhotoBlanc.png" Margin="60,0,5,0" Height="45" />
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Foreground="White">Hamoul Khaled 2</TextBlock>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem Padding="10" Background="White" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391"  >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 1</TextBlock>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Padding="10" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391">
+                <ListViewItem.Background>
+                    <SolidColorBrush Color="#FF56A5BA"/>
+                </ListViewItem.Background>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="img/profilPhotoBlanc.png" Margin="60,0,5,0" Height="45" />
+                    <TextBlock Margin="40,0,5,0" FontSize="24" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Foreground="White">Hamoul Khaled 2</TextBlock>
                 </StackPanel>
             </ListViewItem>
         </ListView>
-        <Button x:Name="button" Content="ajouter contact" Margin="500,0,625,80.04" VerticalAlignment="Bottom" Height="29.96"/>
-        <Image Source="img/profilPhoto.png" Margin="0,190,372,0" HorizontalAlignment="Right" Width="119" Height="129" VerticalAlignment="Top" />
-        <TextBlock Margin="0,244.68,82.234,0" FontSize="24" Width="239" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Top"><Run Text="Hamoul Khaled 1"/></TextBlock>
-        <Image x:Name="image" HorizontalAlignment="Right" Height="43" Margin="0,0,409,291" VerticalAlignment="Bottom" Width="40" Source="img/phone.png"/>
-        <TextBlock Margin="0,0,88.385,293.443" FontSize="24" Width="239" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="0667280998"/>
-        <Image x:Name="image1" HorizontalAlignment="Right" Height="54" Margin="0,0,408,192" VerticalAlignment="Bottom" Width="39" Source="img/position.png" RenderTransformOrigin="1.271,2.521"/>
-        <TextBlock Margin="0,0,28.425,194.129" FontSize="24" Width="309.212" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957"><Run Text="oued smar Elaharrach"/><Run Text=" "/><Run Text="alger"/></TextBlock>
+        <Button x:Name="button" Content="Ajouter contacte" Margin="495,0,625,83.04" VerticalAlignment="Bottom" Height="29.96" Background="#00000000" BorderBrush="#FF2A84A8" Foreground="#FF2A84A8" FontSize="14" FontFamily="Comic Sans MS" BorderThickness="0.5"/>
+        <Image Source="img/profilPhoto.png" Margin="0,186,428,0" HorizontalAlignment="Right" Width="119" Height="129" VerticalAlignment="Top" />
+        <TextBlock Margin="0,219.68,8.425,0" FontSize="36" Width="366.575" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF267391"><Run Text="Hamoul Khaled 1"/></TextBlock>
+        <Image x:Name="image" HorizontalAlignment="Right" Margin="0,0,470,316" Width="40" Source="img/phone.png" Height="43" VerticalAlignment="Bottom"/>
+        <TextBlock Margin="0,0,136,316" FontSize="24" Width="239" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" Text="0667280998" VerticalAlignment="Bottom"/>
+        <Image x:Name="image1" HorizontalAlignment="Right" Height="54" Margin="0,0,470,240" VerticalAlignment="Bottom" Width="39" Source="img/position.png" RenderTransformOrigin="1.271,2.521"/>
+        <TextBlock Margin="0,0,65.788,240" FontSize="24" Width="309.212" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957"><Run Text="oued smar Elaharrach"/><Run Text=" "/><Run Text="alger"/></TextBlock>
+        <Image x:Name="image1_Copy" HorizontalAlignment="Right" Height="54" Margin="0,0,462,166" VerticalAlignment="Bottom" Width="55" Source="img/Mail.png" RenderTransformOrigin="1.271,2.521"/>
+        <Image x:Name="image1_Copy1" HorizontalAlignment="Right" Height="54" Margin="0,0,462,83.04" VerticalAlignment="Bottom" Width="53" Source="img/website.png" RenderTransformOrigin="1.271,2.521"/>
+        <TextBlock Margin="0,0,65.788,164.493" FontSize="24" Width="309.212" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957" Text="fk_hamoul@esi.dz"/>
+        <TextBlock Margin="0,0,65.788,83.04" FontSize="24" Width="309.212" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957" Text="http://www.esi.dz"/>
+        <Button x:Name="button_Copy" Content="modifier" Margin="0,0,34,25" VerticalAlignment="Bottom" Height="29.96" Background="#00000000" BorderBrush="#FF2A84A8" Foreground="#FF2A84A8" HorizontalAlignment="Right" Width="116" FontFamily="Comic Sans MS" FontSize="16" BorderThickness="0.5"/>
+        <Border BorderBrush="#FF267391" BorderThickness="2" HorizontalAlignment="Right" Margin="0,119.093,213.219,218.053" Width="5" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
 
 
 
