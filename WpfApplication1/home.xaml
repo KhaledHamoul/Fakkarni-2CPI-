@@ -23,6 +23,22 @@
                 <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
+        <Storyboard x:Key="homeEnter">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border">
+                <EasingColorKeyFrame KeyTime="0" Value="#00000000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#26000000"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="homeLeave">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)" Storyboard.TargetName="border">
+                <EasingColorKeyFrame KeyTime="0" Value="Black"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="Black"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="border">
+                <EasingColorKeyFrame KeyTime="0" Value="#26000000"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#00000000"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="aproposBtn">
@@ -31,12 +47,16 @@
         <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="aproposBtn">
             <BeginStoryboard x:Name="onMouseLeaveaproposBtn_BeginStoryboard" Storyboard="{StaticResource onMouseLeaveaproposBtn}"/>
         </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="border">
+            <BeginStoryboard x:Name="homeEnter_BeginStoryboard" Storyboard="{StaticResource homeEnter}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="border">
+            <BeginStoryboard x:Name="homeLeave_BeginStoryboard" Storyboard="{StaticResource homeLeave}"/>
+        </EventTrigger>
     </Window.Triggers>
     <Grid>
         <Image x:Name="back" Source="img/home_page.png" Margin="-9,-15,-15,-9" Focusable="True" />
-        <Image x:Name="homeIcon" Source="icons/homeIcon.png" Height="80" Width="80" HorizontalAlignment="Left" Margin="99,77,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height"/>
         <Border BorderThickness="1" Height="40" Margin="0,0,72,0" VerticalAlignment="Top" Background="#00EA3F3F" MouseDown="drag"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="99,77,0,0" VerticalAlignment="Top" Width="80" Background="#00000000"/>
 
         <Image x:Name="iconClose" HorizontalAlignment="Right" Height="12" Source="icons/closeIcon.png" Stretch="Fill" VerticalAlignment="Top" Width="12" Margin="0,15,10,0" Panel.ZIndex="1" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close"  OpacityMask="Red"/>
         <Image x:Name="iconCloseHover" Height="12" Source="icons/closeIconHover.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,15,10,0" Panel.ZIndex="3" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" HorizontalAlignment="Right" Width="12" Visibility="Hidden"/>
@@ -48,7 +68,17 @@
 
         <Image x:Name="aproposIcon" Source="icons/aProposIcon.png" Height="100" Width="100" HorizontalAlignment="Right" Margin="0,0,-1,0" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height" />
         <Image x:Name="aproposIconHover" Source="icons/aProposIconHover.png" Height="100" Width="100" HorizontalAlignment="Right" Margin="0,0,-1,0" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height" Visibility="Hidden" />
-        <Border x:Name="aproposBtn" BorderThickness="1" HorizontalAlignment="Right" Height="63" Margin="0,0,18,20" VerticalAlignment="Bottom" Width="64" CornerRadius="100" Background="#00000000" MouseDown="versContact"/>
+        <Border x:Name="aproposBtn" BorderThickness="1" HorizontalAlignment="Right" Height="63" Margin="0,0,18,20" VerticalAlignment="Bottom" Width="64" CornerRadius="100" Background="#00000000"/>
+
+
+        <Image x:Name="homeIcon" Source="icons/homeIcon.png" Height="80" Width="80" HorizontalAlignment="Left" Margin="335,70,0,0" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <Border x:Name="border" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="335,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000" OpacityMask="Black"/>
+        <Image x:Name="eventIcon" Source="icons/eventIcon.png" Height="80" Width="80" Margin="545,70,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" HorizontalAlignment="Left"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="545,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000"/>
+        <Image x:Name="contactIcon" Source="icons/contactIcon.png" Height="80" Width="80" Margin="0,70,460,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height" MouseDown="versContact"/>
+        <Border BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,460,0" VerticalAlignment="Top" Width="80" Background="#00000000" MouseDown="versContact"/>
+        <Image x:Name="hoidayIcon" Source="icons/holidayIcon.png" Height="80" Width="100" Margin="0,72.241,250.518,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height"/>
+        <Border BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,255,0" VerticalAlignment="Top" Width="95.518" Background="#00000000"/>
 
     </Grid>
 </Window>

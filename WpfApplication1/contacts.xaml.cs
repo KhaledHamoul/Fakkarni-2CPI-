@@ -76,6 +76,11 @@ namespace WpfApplication1
             this.WindowState = WindowState.Minimized;
         }
 
-
+        private void versHome(object sender, MouseButtonEventArgs e)
+        {
+            Window win = new home(this);
+            win.Show();
+            this.Close();
+        }
     }
 }
