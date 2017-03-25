@@ -70,6 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="apropos.xaml.cs">
+      <DependentUpon>apropos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Classes Definitions\Tache.cs" />
     <Compile Include="Classes Definitions\Utilisateur.cs" />
     <Compile Include="Classes Definitions\Vacance.cs" />
@@ -126,6 +129,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="img\apropos.png" />
     <Resource Include="icons\holidayIcon.png" />
     <Resource Include="icons\contactIcon.png" />
     <Resource Include="icons\eventIcon.png" />
@@ -172,6 +176,10 @@
     <Folder Include="Windows\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="apropos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="contacts.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

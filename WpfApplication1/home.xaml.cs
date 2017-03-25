@@ -83,5 +83,11 @@ namespace WpfApplication1
             win.Show();
             this.Close();
         }
+
+        private void apropos(object sender, MouseButtonEventArgs e)
+        {
+            Window win = new apropos();
+            win.Show();
+        }
     }
 }

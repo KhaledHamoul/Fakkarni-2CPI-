@@ -142,7 +142,7 @@
 
         <Image x:Name="aproposIcon" Source="icons/aProposIcon.png" Height="100" Width="100" HorizontalAlignment="Right" Margin="0,0,-1,0" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height" />
         <Image x:Name="aproposIconHover" Source="icons/aProposIconHover.png" Height="100" Width="100" HorizontalAlignment="Right" Margin="0,0,-1,0" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height" Visibility="Hidden" />
-        <Border x:Name="aproposBtn" BorderThickness="1" HorizontalAlignment="Right" Height="63" Margin="0,0,18,20" VerticalAlignment="Bottom" Width="64" CornerRadius="100" Background="#00000000"/>
+        <Border x:Name="aproposBtn" BorderThickness="1" HorizontalAlignment="Right" Height="63" Margin="0,0,18,20" VerticalAlignment="Bottom" Width="64" CornerRadius="100" Background="#00000000" MouseDown="apropos"/>
 
 
         <Image x:Name="homeIcon" Source="icons/homeIcon.png" Height="80" Width="80" HorizontalAlignment="Left" Margin="335,70,0,0" VerticalAlignment="Top" Panel.ZIndex="1" RenderTransformOrigin="0.5,0.5">
@@ -189,6 +189,7 @@
             </Image.RenderTransform>
         </Image>
         <Border x:Name="holidayBorder" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,255,0" VerticalAlignment="Top" Width="95.518" Background="#00000000"/>
+        <Label x:Name="label" Content="log + slogon" Margin="545,305,170,265" FontSize="72"/>
 
     </Grid>
 </Window>

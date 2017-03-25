@@ -75,3 +75,5 @@ C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\D
 C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.g.resources
 C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.Properties.Resources.resources
 C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
+C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\apropos.g.cs
+C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\apropos.baml
