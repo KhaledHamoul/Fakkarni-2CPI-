@@ -44,6 +44,7 @@
         <Border BorderThickness="1" Margin="15,7.5,0,0" Height="32.5" VerticalAlignment="Top" Background="#00000000" MouseDown="drag" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment">
             <Rectangle Fill="Transparent" Margin="0,9.5,14,9" HorizontalAlignment="Right" Width="12.167"/>
         </Border>
+        <Label x:Name="label" Content="A propos de l'application et nous " HorizontalAlignment="Left" Margin="35,212.116,0,0" VerticalAlignment="Top" FontSize="36"/>
 
     </Grid>
 </Window>
