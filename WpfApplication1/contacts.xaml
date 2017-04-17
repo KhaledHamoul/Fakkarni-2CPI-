@@ -8,6 +8,7 @@
         mc:Ignorable="d"
         Title="contacts" Height="720" Width="1280" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
+
         <Storyboard x:Key="OnMouseEnter1"/>
         <Storyboard x:Key="contactEnter">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="contactIcon">
@@ -81,6 +82,7 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="contactBorder">
@@ -108,8 +110,8 @@
             <BeginStoryboard x:Name="hollidayLeave_BeginStoryboard" Storyboard="{StaticResource hollidayLeave}"/>
         </EventTrigger>
     </Window.Triggers>
-    <Grid>
-        <Image x:Name="back" Source="img/home_Page.png" Margin="-10,-10,-14,-4" Focusable="True" Height="734" Width="1304" />
+    <Grid Focusable="True">
+        <Image x:Name="back" Source="img/home_Page.png" Margin="-10,-10,-14,-4" Height="734" Width="1304" Focusable="True" MouseDown="backMouseDown" />
         <Border BorderThickness="1" Height="40" Margin="0,0,72,0" VerticalAlignment="Top" Background="#00EA3F3F" MouseDown="drag"/>
 
         <Image x:Name="iconClose" HorizontalAlignment="Right" Height="12" Source="icons/closeIcon.png" Stretch="Fill" VerticalAlignment="Top" Width="12" Margin="0,15,10,0" Panel.ZIndex="1" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close"  OpacityMask="Red"/>
@@ -122,13 +124,13 @@
 
 
 
-        <ListView x:Name="listView" BorderBrush="#FF3F7988" Background="{x:Null}" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="270,172.666,570,0" Height="371" VerticalAlignment="Top" Foreground="{x:Null}" BorderThickness="0,2,0,0">
+        <ListView x:Name="listeContactes" BorderBrush="#FF3F7988" Background="{x:Null}" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="270,172.666,570,0" Height="371" VerticalAlignment="Top" Foreground="{x:Null}" BorderThickness="0,2,0,0" SelectionChanged="UpdateContact">
 
             <!--  ******************************************************************** -->
 
             <!--***************************************************************************-->
 
-            <ListViewItem Padding="10" Background="#FFF4F7F8" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391"  >
+            <!--  <ListViewItem Padding="10" Background="#FFF4F7F8" BorderBrush="White"  BorderThickness="0" Foreground="#FF267391"  >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="img/profilPhoto.png" Margin="60,0,5,0" Height="45" />
                     <TextBlock Margin="40,0,5,0" FontSize="20" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 1</TextBlock>
@@ -241,22 +243,22 @@
                     <TextBlock Margin="40,0,5,0" FontSize="20" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 1</TextBlock>
                 </StackPanel>
             </ListViewItem>
-
+                                -->
         </ListView>
 
 
         <Button x:Name="button" Content="Ajouter contacte" Margin="495,0,625,83.04" VerticalAlignment="Bottom" Height="29.96" Background="#00000000" BorderBrush="#FF2A84A8" Foreground="#FF2A84A8" FontSize="14" FontFamily="Comic Sans MS" BorderThickness="0.5"/>
         <Image Source="img/profilPhoto.png" Margin="0,186,428,0" HorizontalAlignment="Right" Width="110" Height="120" VerticalAlignment="Top" />
-        <TextBlock Margin="0,219.68,8.425,0" FontSize="32" Width="366.575" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF267391"><Run Text="Hamoul Khaled 1"/></TextBlock>
+        <TextBlock x:Name="nom" Margin="0,219.68,8.425,0" FontSize="32" Width="366.575" FontFamily="Comic Sans MS" Padding="3,6,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF267391"/>
         <Image x:Name="image" HorizontalAlignment="Right" Margin="0,0,470,316" Width="25" Source="img/phone.png" Height="30" VerticalAlignment="Bottom"/>
-        <TextBlock Margin="0,0,142,315.043" FontSize="16" Width="239" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" Text="0667280998" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="telephone" Margin="0,358.957,142,315.043" FontSize="16" Width="239" FontFamily="Comic Sans MS" Padding="6,6,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right"/>
         <Image x:Name="image1" HorizontalAlignment="Right" Height="30" Margin="0,0,470,240" VerticalAlignment="Bottom" Width="30" Source="img/position.png" RenderTransformOrigin="1.271,2.521"/>
-        <TextBlock Margin="0,0,71.788,233.043" FontSize="16" Width="309.212" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957"><Run Text="oued smar Elaharrach"/><Run Text=" "/><Run Text="alger"/></TextBlock>
+        <TextBlock x:Name="adresse" Margin="0,0,71.788,233.043" FontSize="16" Width="309.212" FontFamily="Comic Sans MS" Padding="5,6,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957"/>
         <Image x:Name="image1_Copy" HorizontalAlignment="Right" Height="30" Margin="0,0,462,166" VerticalAlignment="Bottom" Width="30" Source="img/Mail.png" RenderTransformOrigin="1.271,2.521"/>
         <Image x:Name="image1_Copy1" HorizontalAlignment="Right" Height="30" Margin="0,0,462,83.04" VerticalAlignment="Bottom" Width="30" Source="img/website.png" RenderTransformOrigin="1.271,2.521"/>
-        <TextBlock Margin="0,0,71.788,151.536" FontSize="16" Width="309.212" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957" Text="fk_hamoul@esi.dz"/>
-        <TextBlock Margin="0,0,71.788,66.083" FontSize="16" Width="309.212" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957" Text="http://www.esi.dz"/>
-        <Button x:Name="button_Copy" Content="modifier" Margin="0,0,34,25" VerticalAlignment="Bottom" Height="29.96" Background="#00000000" BorderBrush="#FF2A84A8" Foreground="#FF2A84A8" HorizontalAlignment="Right" Width="116" FontFamily="Comic Sans MS" FontSize="16" BorderThickness="0.5"/>
+        <TextBlock x:Name="email" Margin="0,0,71.788,151.536" FontSize="16" Width="309.212" FontFamily="Comic Sans MS" Padding="5,6,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957"/>
+        <TextBlock x:Name="site" Margin="0,0,71.788,66.083" FontSize="16" Width="309.212" FontFamily="Comic Sans MS" Padding="5,6,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957"/>
+        <Button x:Name="modif" Content="modifier" Margin="0,0,34,25" VerticalAlignment="Bottom" Height="29.96" Background="#00000000" BorderBrush="#FF2A84A8" Foreground="#FF2A84A8" HorizontalAlignment="Right" Width="116" FontFamily="Comic Sans MS" FontSize="16" BorderThickness="0.5" Click="modifierContacte"/>
         <Border BorderBrush="#FF267391" BorderThickness="2" HorizontalAlignment="Right" Margin="0,119.093,213.219,218.053" Width="5" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
@@ -313,6 +315,15 @@
             </Image.RenderTransform>
         </Image>
         <Border x:Name="holidayBorder" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,255,0" VerticalAlignment="Top" Width="95.518" Background="#00000000"/>
+
+        <Button x:Name="confirm" Content="confirmer" Margin="0,0,34,25" VerticalAlignment="Bottom" Height="29.96" Background="#00000000" BorderBrush="#FF2A84A8" Foreground="#FF2A84A8" HorizontalAlignment="Right" Width="116" FontFamily="Comic Sans MS" FontSize="16" BorderThickness="0.5" Click="confirmer" Visibility="Hidden"/>
+
+        <TextBox x:Name="nomChange" HorizontalAlignment="Right" Margin="0,219.68,40.425,0" FontSize="32" Width="334.575" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF267391" BorderBrush="#FF267391" Background="{x:Null}" Visibility="Hidden"/>
+
+        <TextBox x:Name="adresseCange" Margin="0,0,71.788,233.043" FontSize="16" Width="307" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957" Visibility="Hidden" BorderBrush="#FF267391" Background="{x:Null}"/>
+        <TextBox x:Name="telephoneChange"  Margin="0,0,71,315.043" FontSize="16" Width="307" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46" Visibility="Hidden" BorderBrush="#FF267391" Background="{x:Null}"/>
+        <TextBox x:Name="emailChange" Margin="0,0,71.788,151.536" FontSize="16" Width="307" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957" Visibility="Hidden" Background="{x:Null}" BorderBrush="#FF267391"/>
+        <TextBox x:Name="siteChange" Margin="0,0,71.788,66.083" FontSize="16" Width="307" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957" Visibility="Hidden" Background="{x:Null}" BorderBrush="#FF267391"/>
 
 
 

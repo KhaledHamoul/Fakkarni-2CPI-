@@ -20,11 +20,13 @@ namespace WpfApplication1
     public partial class home : Window
     {
         Window win;
+        int userId;
 
-        public home(Window win)
+        public home(Window win , int userId)
         {
             InitializeComponent();
             this.win = win;
+            this.userId = userId;
         }
 
         private void drag(object sender, MouseButtonEventArgs e)
@@ -79,7 +81,7 @@ namespace WpfApplication1
 
         private void versContact(object sender, MouseButtonEventArgs e)
         {
-            Window win = new contacts(this);
+            Window win = new contacts(this,userId);
             win.Show();
             this.Close();
         }

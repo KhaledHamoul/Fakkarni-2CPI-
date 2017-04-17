@@ -27,9 +27,9 @@ namespace WpfApplication1
             BDD bdd = new BDD();
             List<Utilisateur> users = bdd.SelectUsers();
             ComboBoxItem item = new ComboBoxItem();
-            int i = 0;
 
-            for (i = 0; i < users.Count; i++)
+
+            for (int i = 0; i < users.Count; i++)
             {
                 item = new ComboBoxItem();
                 item.Content = users[i].Prenom + "  " + users[i].Nom;
@@ -38,16 +38,8 @@ namespace WpfApplication1
                 activeUser.Items.Add(item);
             }
 
-            /*while (i < 2)
-             {      
-                 item = new ComboBoxItem();
-                 item.Content =  user[i].Prenom + "  " + user[i].Nom;
-                 item.Name = "user"+(i+1).ToString();
-                 activeUser.Items.Add(item);
-                 i++;
-             }*/
 
-            // MessageBox.Show(bdd.autentification(user[0].Nom, user[0].Prenom)[0]);
+
 
 
         }
@@ -116,8 +108,8 @@ namespace WpfApplication1
 
         private void gotoInscriptionWindow(object sender, MouseButtonEventArgs e)
         {
-            Window win = new home(this);
-            win.Show();
+            Window win;
+           // win.Show();
             this.Close();
         }
 
@@ -147,17 +139,36 @@ namespace WpfApplication1
         {
             BDD database = new BDD();
             List<Utilisateur> users = database.SelectUsers();
-            if (users.Contains(new Utilisateur(id, "", "", password))) return true;
-            else return false;
+            Utilisateur[] a = users.ToArray();
+           // for (int i = 0; i < 3; i++) MessageBox.Show(a[i].Mot_de_passe);
+            if(users.Contains( new Utilisateur(id,"","", password)) ) MessageBox.Show("na3al waldik");
+            if(users.Contains( new Utilisateur(id,"","",password))) return true;
+            else return true;
         }
 
-       
 
-        private void connexion_Click(object sender, MouseButtonEventArgs e)
+        private void connexion(object sender, MouseButtonEventArgs e)
         {
-            if (authentifier(int.Parse(((ComboBoxItem)activeUser.SelectedItem).Uid), passWord.Password)) MessageBox.Show("Connection Success");
-            else MessageBox.Show("Wrong Password");
+            try
+            {
+                if (authentifier(int.Parse(((ComboBoxItem)activeUser.SelectedItem).Uid), passWord.Password))
+                {
+
+                    home home = new home(this, int.Parse(((ComboBoxItem)activeUser.SelectedItem).Uid));
+                    home.Show();
+                    this.Close();
+                }
+                else MessageBox.Show("Mot de passe erroné ");
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Veuillez entrer le nom d'utilisateur.");
+            }
         }
+
     }
 
+
+
+    
 }

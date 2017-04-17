@@ -10,6 +10,7 @@ namespace WpfApplication1
     {
         private int id;
         private string nom;
+        public string prenom { get; set; }
         private string adresse;
         private string numTel;
         private string email;
