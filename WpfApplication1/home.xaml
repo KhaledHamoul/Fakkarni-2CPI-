@@ -136,8 +136,8 @@
         <Image x:Name="iconCloseHover" Height="12" Source="icons/closeIconHover.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,15,10,0" Panel.ZIndex="3" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" HorizontalAlignment="Right" Width="12" Visibility="Hidden"/>
         <Image x:Name="minimizeHover" Height="3" Source="icons/minimizeHover.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,19,47,0" Panel.ZIndex="1" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" OpacityMask="{x:Null}" MouseDown="minimizeWindow" HorizontalAlignment="Right" Width="12"/>
         <Image x:Name="minimize" Height="3" Source="icons/minimize.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,19,47,0" Panel.ZIndex="1" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" HorizontalAlignment="Right" Width="12"/>
-        <Rectangle x:Name="minimizeBtn" ToolTip="Minimiser la fenêtre" ToolTipService.ShowDuration="2000" Height="40" VerticalAlignment="Top" Margin="1208,0,0,0" Panel.ZIndex="0" HorizontalAlignment="Left" Width="38" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" Opacity="0" Fill="Black"/>
-        <Rectangle x:Name="closeBtnBack" ToolTip="Fermer la fenêtre" ToolTipService.ShowDuration="2000" Height="40" VerticalAlignment="Top" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" Opacity="0" Fill="White" HorizontalAlignment="Right" Width="35" Margin="0,0,-1,0"/>
+        <Rectangle x:Name="minimizeBtn" ToolTip="Minimiser la fenêtre" ToolTipService.ShowDuration="2000" Height="40" VerticalAlignment="Top" Margin="1208,0,0,0" Panel.ZIndex="0" HorizontalAlignment="Left" Width="38" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" Opacity="0" Fill="Black" MouseUp="minimizeWindow"/>
+        <Rectangle x:Name="closeBtnBack" ToolTip="Fermer la fenêtre" ToolTipService.ShowDuration="2000" Height="40" VerticalAlignment="Top" MouseEnter="mouseEnter" MouseLeave="mouseLeave" Opacity="0" Fill="White" HorizontalAlignment="Right" Width="35" Margin="0,0,-1,0" MouseUp="close"/>
 
 
         <Image x:Name="aproposIcon" Source="icons/aProposIcon.png" Height="100" Width="100" HorizontalAlignment="Right" Margin="0,0,-1,0" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height" />
@@ -199,6 +199,17 @@
             </Image.RenderTransform>
         </Image>
         <Border x:Name="holidayBorder" ToolTip="Jours fériés" ToolTipService.ShowDuration="2000" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,250,0" VerticalAlignment="Top" Width="101" Background="#00000000"/>
+        <Image x:Name="documentIcon" ToolTip="Documents" ToolTipService.ShowDuration="2000" HorizontalAlignment="Left" Height="75" Margin="1111,74,0,0" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.5,0.5" MouseUp="versDocument" Source="icons/IconDocument.png">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        
         <Image x:Name="image" Margin="426,201,232,50" Source="icons/logo.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -212,7 +223,7 @@
         <Label x:Name="label" Content="Fakkarni" Margin="8,5,0,0" Width="212" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="40,0,5,5" FontSize="18" FontFamily="Segoe Print" FontWeight="Bold" Background="{x:Null}" Foreground="#FF0F688B" BorderThickness="0"/>
         <Image x:Name="image2" HorizontalAlignment="Left" Height="28" Margin="9,6,0,0" VerticalAlignment="Top" Width="34" Source="icons/logo.png"/>
 
-        <Menu x:Name="userMenu" Width="159" Height="44" HorizontalAlignment="Left" Margin="16,170,0,0" VerticalAlignment="Top">
+        <Menu x:Name="userMenu" Width="159" Height="44" HorizontalAlignment="Left" Margin="16,170,0,0" VerticalAlignment="Top" Visibility="Hidden">
             <MenuItem Header="_Modifier le compte" Width="159" Height="22" Foreground="#FF0F688B" BorderBrush="{x:Null}" >
                 <MenuItem.Icon>
                     <Image Source="icons/configIcon.png" Width="12" HorizontalAlignment="Right" Margin="0,2,2,2" />

@@ -26,8 +26,9 @@ namespace WpfApplication1
         {
             InitializeComponent();
             initialiserListBox();
+            cnctdUser.Content = App.Current.Resources["userName"].ToString();
 
-            
+
 
         }
 
@@ -88,6 +89,14 @@ namespace WpfApplication1
             win.Show();
             this.Close();
         }
+
+        private void versHome(object sender, MouseButtonEventArgs e)
+        {
+            Window win = new home(this, 0);
+            win.Show();
+            this.Close();
+        }
+
 
         private void Apropos(object sender, MouseButtonEventArgs e)
         {
@@ -162,6 +171,27 @@ namespace WpfApplication1
             (new BDD()).DeleteDocument(((Document)listDocuments.SelectedItem).Id);
             initialiserListBox();
         }
+
+        private void showMenu(object sender, MouseButtonEventArgs e)
+        {
+            userMenu.Visibility = Visibility.Visible;
+        }
+
+        private void hideMenu(object sender, MouseButtonEventArgs e)
+        {
+            userMenu.Visibility = Visibility.Hidden;
+        }
+
+        private void deconnexion(object sender, RoutedEventArgs e)
+        {
+            App.Current.Resources["userName"] = -1;
+            App.Current.Resources["idUser"] = -1;
+            MainWindow win = new MainWindow();
+            this.Close();
+            win.Show();
+        }
+
+        
     }
 }
 

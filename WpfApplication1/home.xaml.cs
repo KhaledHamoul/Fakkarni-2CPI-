@@ -27,9 +27,8 @@ namespace WpfApplication1
             InitializeComponent();
             this.win = win;
             this.userId = userId;
-            // cnctdUser.Content = "khaled";
-             cnctdUser.Content = App.Current.Resources["userName"].ToString();
-            //MessageBox.Show(App.Current.Resources["userName"].ToString() );
+            cnctdUser.Content = App.Current.Resources["userName"].ToString();
+            
         }
 
         private void drag(object sender, MouseButtonEventArgs e)
@@ -85,6 +84,13 @@ namespace WpfApplication1
         private void versContact(object sender, MouseButtonEventArgs e)
         {
             contacts win = new contacts(this,userId);
+            win.Show();
+            this.Close();
+        }
+
+        private void versDocument(object sender, MouseButtonEventArgs e)
+        {
+            DocumentsWindow win = new DocumentsWindow();
             win.Show();
             this.Close();
         }

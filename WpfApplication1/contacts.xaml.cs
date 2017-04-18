@@ -28,7 +28,8 @@ namespace WpfApplication1
         {
             InitializeComponent();
             this.win = win;
-            this.userId = userId;    
+            this.userId = userId;
+            cnctdUser.Content = App.Current.Resources["userName"].ToString();
             this.Focusable = true;
             contactes = bdd.SelectContacts(userId).ToArray();
            
@@ -238,7 +239,7 @@ namespace WpfApplication1
 
         private void versDocument(object sender, MouseButtonEventArgs e)
         {
-            Window win = new home(this, userId);
+            DocumentsWindow win = new DocumentsWindow();
             win.Show();
             this.Close();
         }
@@ -402,5 +403,26 @@ namespace WpfApplication1
 
 
         }
+
+        private void showMenu(object sender, MouseButtonEventArgs e)
+        {
+            userMenu.Visibility = Visibility.Visible;
+        }
+
+        private void hideMenu(object sender, MouseButtonEventArgs e)
+        {
+            userMenu.Visibility = Visibility.Hidden;
+        }
+
+        private void deconnexion(object sender, RoutedEventArgs e)
+        {
+            App.Current.Resources["userName"] = -1;
+            App.Current.Resources["idUser"] = -1;
+            MainWindow win = new MainWindow();
+            this.Close();
+            win.Show();
+        }
     }
+
+
 }

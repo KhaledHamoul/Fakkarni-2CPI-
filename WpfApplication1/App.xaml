@@ -8,7 +8,7 @@
     <Application.Resources>
 
         <System:Int32 x:Key="idUser">-1</System:Int32>
-        <System:String x:Key="userName"/>
+        <System:String x:Key="userName">0</System:String>
         <SolidColorBrush x:Key="Blue1" Color="#FF56A5BA" />
         <SolidColorBrush x:Key="Blue2" Color="#FF2A728E" />
         <SolidColorBrush x:Key="Gray1" Color="#FFF6F9FA"/>
