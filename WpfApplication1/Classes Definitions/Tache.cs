@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,8 @@ namespace WpfApplication1
         private string priorite;
         private DateTime date;
         private string etat;
-        private Document document;
+        private List<Document> documents;
+
 
        
         public Tache(int id, string designation , string priorite,DateTime date, string etat)
@@ -89,17 +91,27 @@ namespace WpfApplication1
             }
         }
 
-        internal Document Document
+        internal List<Document> Documents
         {
             get
             {
-                return document;
+                return documents;
             }
 
             set
             {
-                document = value;
+                documents = value;
             }
         }
+
+        public void addDocument(Document d)
+        {
+            Documents.Add(d);
+        }
+
+
+
+
+
     }
 }

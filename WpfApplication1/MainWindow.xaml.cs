@@ -28,16 +28,17 @@ namespace WpfApplication1
             List<Utilisateur> users = bdd.SelectUsers();
             ComboBoxItem item = new ComboBoxItem();
 
-
-            for (int i = 0; i < users.Count; i++)
+            try
             {
-                item = new ComboBoxItem();
-                item.Content = users[i].Prenom + "  " + users[i].Nom;
-                item.Uid = users[i].Id.ToString();
-                item.Name = "user" + (i + 1).ToString();
-                activeUser.Items.Add(item);
-            }
-
+                for (int i = 0; i < users.Count; i++)
+                {
+                    item = new ComboBoxItem();
+                    item.Content = users[i].Prenom + "  " + users[i].Nom;
+                    item.Uid = users[i].Id.ToString();
+                    item.Name = "user" + (i + 1).ToString();
+                    activeUser.Items.Add(item);
+                }
+            } catch (Exception ex) { }
 
 
 
@@ -139,11 +140,8 @@ namespace WpfApplication1
         {
             BDD database = new BDD();
             List<Utilisateur> users = database.SelectUsers();
-            Utilisateur[] a = users.ToArray();
-           // for (int i = 0; i < 3; i++) MessageBox.Show(a[i].Mot_de_passe);
-            if(users.Contains( new Utilisateur(id,"","", password)) ) MessageBox.Show("na3al waldik");
             if(users.Contains( new Utilisateur(id,"","",password))) return true;
-            else return true;
+            else return false;
         }
 
 

@@ -81,7 +81,7 @@ namespace WpfApplication1
 
         private void versContact(object sender, MouseButtonEventArgs e)
         {
-            Window win = new contacts(this,userId);
+            contacts win = new contacts(this,userId);
             win.Show();
             this.Close();
         }

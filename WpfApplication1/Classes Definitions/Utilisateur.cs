@@ -17,14 +17,37 @@ namespace WpfApplication1
         private Evenement [] evenements;
         private Vacance [] vacances;
 
+        public override string ToString()
+        {
+            return nom+" "+prenom;
+        }
+
+        public int CompareTo(object o)
+        {
+            Utilisateur u = ((Utilisateur)o);
+            return nom.CompareTo(u.nom) * prenom.CompareTo(u.Prenom);
+        }
+
         public Utilisateur(int id, string nom, string prenom, string mot_de_passe)
         {
             this.nom = nom;
             this.id = id;
             this.prenom = prenom;
-            this.Mot_de_passe = mot_de_passe;
+            this.mot_de_passe = mot_de_passe;
 
         }
+
+        public override bool Equals(object o)
+        {
+            if (((Utilisateur)o).Id == this.id && ((Utilisateur)o).Mot_de_passe.Equals(this.mot_de_passe)) return true;
+            else return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
         public string Nom
         {
             get

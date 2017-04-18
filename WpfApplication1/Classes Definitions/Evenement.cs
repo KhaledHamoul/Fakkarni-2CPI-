@@ -13,7 +13,7 @@ namespace WpfApplication1
         private string priorite;
         private DateTime date;
         private string lieu;
-        private Document document;
+        private List<Document> documents;
 
         public Evenement(int id, string designation,string priorite, DateTime date, string lieu)
         {
@@ -89,19 +89,23 @@ namespace WpfApplication1
             }
         }
 
-        internal Document Document
+        internal List<Document> Documents
         {
             get
             {
-                return document;
+                return documents;
             }
 
             set
             {
-                document = value;
+                documents = value;
             }
         }
 
+        public void addDocument(Document d)
+        {
+            Documents.Add(d);
+        }
 
     }
 }
