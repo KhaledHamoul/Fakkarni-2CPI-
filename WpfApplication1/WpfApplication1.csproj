@@ -132,6 +132,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="icons\logo.png" />
     <Resource Include="icons\IconDocument.png" />
     <Resource Include="img\apropos.png" />
     <Resource Include="icons\holidayIcon.png" />

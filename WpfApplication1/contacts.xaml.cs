@@ -202,7 +202,6 @@ namespace WpfApplication1
             try
             {
                 nom.Text = contactes[int.Parse(i.Uid)].Nom;
-                MessageBox.Show(nom.Text);
                 telephone.Text = contactes[int.Parse(i.Uid)].Nom;
                 adresse.Text = contactes[int.Parse(i.Uid)].Adresse;
                 email.Text = contactes[int.Parse(i.Uid)].Email;

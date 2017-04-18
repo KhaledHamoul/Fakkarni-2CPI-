@@ -189,7 +189,18 @@
             </Image.RenderTransform>
         </Image>
         <Border x:Name="holidayBorder" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,255,0" VerticalAlignment="Top" Width="95.518" Background="#00000000"/>
-        <Label x:Name="label" Content="log + slogon" Margin="545,305,170,265" FontSize="72"/>
+        <Image x:Name="image" Margin="426,201,232,50" Source="icons/logo.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.142"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Label x:Name="label" Content="Fakkarni" Margin="7,5,0,0" Width="212" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="40,0,5,5" FontSize="18" FontFamily="Segoe Print" FontWeight="Bold" Background="{x:Null}" Foreground="#FF0F688B" BorderThickness="0"/>
+        <Image x:Name="image2" HorizontalAlignment="Left" Height="28" Margin="8,7,0,0" VerticalAlignment="Top" Width="34" Source="icons/logo.png"/>
 
     </Grid>
 </Window>
