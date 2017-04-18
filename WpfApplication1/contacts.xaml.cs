@@ -165,67 +165,70 @@ namespace WpfApplication1
         private void confirmer(object sender, RoutedEventArgs e)
         {
             ListViewItem i = (ListViewItem)listeContactes.SelectedItem;
-
-            try
+            if ((nomChange.Text.ToString() == "") || (adresseCange.Text.ToString() == "") || (telephoneChange.Text.ToString() == "") || (emailChange.Text.ToString() == "") || (siteChange.Text.ToString() == "")) MessageBox.Show("veuillez remplir tous les champs !");
+            else
             {
-
-               
-
-            Contact cntct = new Contact(contactes[int.Parse(i.Uid)].Id, nomChange.Text.ToString(), adresseCange.Text.ToString(), telephoneChange.Text.ToString(), emailChange.Text.ToString(), siteChange.Text.ToString());
-        
-            bdd.Update(cntct);
-            listeContactes.Items.Clear();
-            contactes = null ;
-            contactes = bdd.SelectContacts(userId).ToArray();
-            ListViewItem item = new ListViewItem();
-            StackPanel stack = new StackPanel();
-           
-                for (int j = 0; j < contactes.Count() ; j++)
+                try
                 {
-                    item = new ListViewItem();
-                    if (j == int.Parse(i.Uid) ) item.IsSelected = true;
-                    item.Content = contactes[j].Nom;                    
-                    item.Uid = j.ToString();
-                   // MessageBox.Show(item.Uid);
-                    item.Name = "" ;
-                    item.Padding = new Thickness(8);
-                  /*  item.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
-                    item.BorderBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
-                    item.BorderThickness = new Thickness(0);
-                    item.Foreground = new SolidColorBrush(Color.FromRgb(0, 0, 255));*/
 
-                    listeContactes.Items.Add(item);
+
+
+                    Contact cntct = new Contact(contactes[int.Parse(i.Uid)].Id, nomChange.Text.ToString(), adresseCange.Text.ToString(), telephoneChange.Text.ToString(), emailChange.Text.ToString(), siteChange.Text.ToString());
+
+                    bdd.Update(cntct);
+                    listeContactes.Items.Clear();
+                    contactes = null;
+                    contactes = bdd.SelectContacts(userId).ToArray();
+                    ListViewItem item = new ListViewItem();
+                    StackPanel stack = new StackPanel();
+
+                    for (int j = 0; j < contactes.Count(); j++)
+                    {
+                        item = new ListViewItem();
+                        if (j == int.Parse(i.Uid)) item.IsSelected = true;
+                        item.Content = contactes[j].Nom;
+                        item.Uid = j.ToString();
+                        // MessageBox.Show(item.Uid);
+                        item.Name = "";
+                        item.Padding = new Thickness(8);
+                        /*  item.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                          item.BorderBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                          item.BorderThickness = new Thickness(0);
+                          item.Foreground = new SolidColorBrush(Color.FromRgb(0, 0, 255));*/
+
+                        listeContactes.Items.Add(item);
+                    }
                 }
+                catch (Exception ex) { }
+
+                try
+                {
+                    nom.Text = contactes[int.Parse(i.Uid)].Nom;
+                    telephone.Text = contactes[int.Parse(i.Uid)].Nom;
+                    adresse.Text = contactes[int.Parse(i.Uid)].Adresse;
+                    email.Text = contactes[int.Parse(i.Uid)].Email;
+                    site.Text = contactes[int.Parse(i.Uid)].Siteweb;
+                }
+                catch (Exception ex) { }
+
+                modif.Visibility = Visibility.Visible;
+                ajouterContact.Visibility = Visibility.Visible;
+                nom.Visibility = Visibility.Visible;
+                adresse.Visibility = Visibility.Visible;
+                email.Visibility = Visibility.Visible;
+                telephone.Visibility = Visibility.Visible;
+                site.Visibility = Visibility.Visible;
+
+                confirm.Visibility = Visibility.Hidden;
+                supprimer.Visibility = Visibility.Hidden;
+                nomChange.Visibility = Visibility.Hidden;
+                telephoneChange.Visibility = Visibility.Hidden;
+                emailChange.Visibility = Visibility.Hidden;
+                adresseCange.Visibility = Visibility.Hidden;
+                siteChange.Visibility = Visibility.Hidden;
+
+                listeContactes.IsEnabled = true;
             }
-            catch (Exception ex) { }
-
-            try
-            {
-                nom.Text = contactes[int.Parse(i.Uid)].Nom;
-                telephone.Text = contactes[int.Parse(i.Uid)].Nom;
-                adresse.Text = contactes[int.Parse(i.Uid)].Adresse;
-                email.Text = contactes[int.Parse(i.Uid)].Email;
-                site.Text = contactes[int.Parse(i.Uid)].Siteweb;
-            }
-            catch (Exception ex) { }
-
-            modif.Visibility = Visibility.Visible;
-            ajouterContact.Visibility = Visibility.Visible;
-            nom.Visibility = Visibility.Visible;
-            adresse.Visibility = Visibility.Visible;
-            email.Visibility = Visibility.Visible;
-            telephone.Visibility = Visibility.Visible;
-            site.Visibility = Visibility.Visible;
-
-            confirm.Visibility = Visibility.Hidden;
-            supprimer.Visibility = Visibility.Hidden;
-            nomChange.Visibility = Visibility.Hidden;
-            telephoneChange.Visibility = Visibility.Hidden;
-            emailChange.Visibility = Visibility.Hidden;
-            adresseCange.Visibility = Visibility.Hidden;
-            siteChange.Visibility = Visibility.Hidden;
-
-            listeContactes.IsEnabled = true;
         }
 
         private void backMouseDown(object sender, MouseButtonEventArgs e)
@@ -270,63 +273,68 @@ namespace WpfApplication1
 
         private void confirmAjoutContact(object sender, RoutedEventArgs e)
         {
-            Contact cntct = new Contact(-1, nomChange.Text.ToString(), adresseCange.Text.ToString(), telephoneChange.Text.ToString(), emailChange.Text.ToString(), siteChange.Text.ToString());
 
-            bdd.Insert(cntct, userId);
-            listeContactes.Items.Clear();
-            contactes = null;
-            contactes = bdd.SelectContacts(userId).ToArray();
-            ListViewItem item = new ListViewItem();
-            StackPanel stack = new StackPanel();
-
-            try
+            if ((nomChange.Text.ToString() == "") || (adresseCange.Text.ToString() == "") || (telephoneChange.Text.ToString() == "") || (emailChange.Text.ToString() == "") || (siteChange.Text.ToString() == "")) MessageBox.Show("veuillez remplir tous les champs !");
+            else
             {
-                for (int j = 0; j < contactes.Count(); j++)
+                Contact cntct = new Contact(-1, nomChange.Text.ToString(), adresseCange.Text.ToString(), telephoneChange.Text.ToString(), emailChange.Text.ToString(), siteChange.Text.ToString());
+
+                bdd.Insert(cntct, userId);
+                listeContactes.Items.Clear();
+                contactes = null;
+                contactes = bdd.SelectContacts(userId).ToArray();
+                ListViewItem item = new ListViewItem();
+                StackPanel stack = new StackPanel();
+
+                try
                 {
-                    item = new ListViewItem();
-                    if (j == contactes.Count()-1) item.IsSelected = true;
-                    item.Content = contactes[j].Nom;
-                    item.Uid = j.ToString();
-                    // MessageBox.Show(item.Uid);
-                    item.Name = "";
-                    item.Padding = new Thickness(8);
-                    /*  item.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
-                      item.BorderBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
-                      item.BorderThickness = new Thickness(0);
-                      item.Foreground = new SolidColorBrush(Color.FromRgb(0, 0, 255));*/
+                    for (int j = 0; j < contactes.Count(); j++)
+                    {
+                        item = new ListViewItem();
+                        if (j == contactes.Count() - 1) item.IsSelected = true;
+                        item.Content = contactes[j].Nom;
+                        item.Uid = j.ToString();
+                        // MessageBox.Show(item.Uid);
+                        item.Name = "";
+                        item.Padding = new Thickness(8);
+                        /*  item.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                          item.BorderBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                          item.BorderThickness = new Thickness(0);
+                          item.Foreground = new SolidColorBrush(Color.FromRgb(0, 0, 255));*/
 
-                    listeContactes.Items.Add(item);
+                        listeContactes.Items.Add(item);
+                    }
                 }
+                catch (Exception ex) { }
+
+                try
+                {
+                    nom.Text = contactes[contactes.Count()].Nom;
+                    MessageBox.Show(nom.Text);
+                    telephone.Text = contactes[contactes.Count()].Nom;
+                    adresse.Text = contactes[contactes.Count()].Adresse;
+                    email.Text = contactes[contactes.Count()].Email;
+                    site.Text = contactes[contactes.Count()].Siteweb;
+                }
+                catch (Exception ex) { }
+
+                ajouterContact.Visibility = Visibility.Visible;
+                modif.Visibility = Visibility.Visible;
+                nom.Visibility = Visibility.Visible;
+                adresse.Visibility = Visibility.Visible;
+                email.Visibility = Visibility.Visible;
+                telephone.Visibility = Visibility.Visible;
+                site.Visibility = Visibility.Visible;
+
+                ajouterContact_confirm.Visibility = Visibility.Hidden;
+                nomChange.Visibility = Visibility.Hidden;
+                telephoneChange.Visibility = Visibility.Hidden;
+                emailChange.Visibility = Visibility.Hidden;
+                adresseCange.Visibility = Visibility.Hidden;
+                siteChange.Visibility = Visibility.Hidden;
+
+                listeContactes.IsEnabled = true;
             }
-            catch (Exception ex) { }
-
-            try
-            {
-                nom.Text = contactes[contactes.Count()].Nom;
-                MessageBox.Show(nom.Text);
-                telephone.Text = contactes[contactes.Count()].Nom;
-                adresse.Text = contactes[contactes.Count()].Adresse;
-                email.Text = contactes[contactes.Count()].Email;
-                site.Text = contactes[contactes.Count()].Siteweb;
-            }
-            catch (Exception ex) { }
-
-            ajouterContact.Visibility = Visibility.Visible;
-            modif.Visibility = Visibility.Visible;
-            nom.Visibility = Visibility.Visible;
-            adresse.Visibility = Visibility.Visible;
-            email.Visibility = Visibility.Visible;
-            telephone.Visibility = Visibility.Visible;
-            site.Visibility = Visibility.Visible;
-
-            ajouterContact_confirm.Visibility = Visibility.Hidden;
-            nomChange.Visibility = Visibility.Hidden;
-            telephoneChange.Visibility = Visibility.Hidden;
-            emailChange.Visibility = Visibility.Hidden;
-            adresseCange.Visibility = Visibility.Hidden;
-            siteChange.Visibility = Visibility.Hidden;
-
-            listeContactes.IsEnabled = true;
         }
 
         private void supprimerContacte(object sender, RoutedEventArgs e)
