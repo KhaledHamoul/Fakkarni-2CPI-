@@ -121,7 +121,7 @@
         <Rectangle x:Name="minimizeBtn" ToolTip="Minimiser la fenêtre" ToolTipService.ShowDuration="2000" Height="40" VerticalAlignment="Top" Margin="1208,0,0,0" Panel.ZIndex="0" HorizontalAlignment="Left" Width="38" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" Opacity="0" Fill="Black"/>
         <Rectangle x:Name="closeBtnBack" ToolTip="Fermer la fenêtre" ToolTipService.ShowDuration="2000" Height="40" VerticalAlignment="Top" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" Opacity="0" Fill="White" HorizontalAlignment="Right" Width="35" Margin="0,0,-1,0"/>
         <Border BorderBrush="#FF2A84A8" BorderThickness="5,1" HorizontalAlignment="Right" Margin="0,167.512,566,-1.512" Width="5"/>
-        <Image x:Name="documentIcon" ToolTip="Documents" ToolTipService.ShowDuration="2000" HorizontalAlignment="Left" Height="75" Margin="1115,70,0,0" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.5,0.5" MouseUp="versDocument" Source="icons/IconDocument.png">
+        <Image x:Name="documentIcon" ToolTip="Documents" ToolTipService.ShowDuration="2000" HorizontalAlignment="Left" Height="75" Margin="1111,74,0,0" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.5,0.5" MouseUp="versDocument" Source="icons/IconDocument.png">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
