@@ -129,15 +129,15 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid>
-        <Image x:Name="back" Source="img/home_page.png" Margin="-9,-15,-15,-9" Focusable="True" Height="734" />
+        <Image x:Name="back" Source="img/home_page.png" Margin="-9,-15,-15,-9" Focusable="True" Height="734" MouseUp="hideMenu" />
         <Border BorderThickness="1" Height="40" Margin="0,0,72,0" VerticalAlignment="Top" Background="#00EA3F3F" MouseDown="drag"/>
 
         <Image x:Name="iconClose" HorizontalAlignment="Right" Height="12" Source="icons/closeIcon.png" Stretch="Fill" VerticalAlignment="Top" Width="12" Margin="0,15,10,0" Panel.ZIndex="1" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close"  OpacityMask="Red"/>
         <Image x:Name="iconCloseHover" Height="12" Source="icons/closeIconHover.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,15,10,0" Panel.ZIndex="3" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" HorizontalAlignment="Right" Width="12" Visibility="Hidden"/>
         <Image x:Name="minimizeHover" Height="3" Source="icons/minimizeHover.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,19,47,0" Panel.ZIndex="1" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" OpacityMask="{x:Null}" MouseDown="minimizeWindow" HorizontalAlignment="Right" Width="12"/>
         <Image x:Name="minimize" Height="3" Source="icons/minimize.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,19,47,0" Panel.ZIndex="1" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" HorizontalAlignment="Right" Width="12"/>
-        <Rectangle x:Name="minimizeBtn" Height="40" VerticalAlignment="Top" Margin="1208,0,0,0" Panel.ZIndex="0" HorizontalAlignment="Left" Width="38" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" Opacity="0" Fill="Black"/>
-        <Rectangle x:Name="closeBtnBack" Height="40" VerticalAlignment="Top" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" Opacity="0" Fill="White" HorizontalAlignment="Right" Width="35" Margin="0,0,-1,0"/>
+        <Rectangle x:Name="minimizeBtn" ToolTip="Minimiser la fenêtre" ToolTipService.ShowDuration="2000" Height="40" VerticalAlignment="Top" Margin="1208,0,0,0" Panel.ZIndex="0" HorizontalAlignment="Left" Width="38" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" Opacity="0" Fill="Black"/>
+        <Rectangle x:Name="closeBtnBack" ToolTip="Fermer la fenêtre" ToolTipService.ShowDuration="2000" Height="40" VerticalAlignment="Top" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" Opacity="0" Fill="White" HorizontalAlignment="Right" Width="35" Margin="0,0,-1,0"/>
 
 
         <Image x:Name="aproposIcon" Source="icons/aProposIcon.png" Height="100" Width="100" HorizontalAlignment="Right" Margin="0,0,-1,0" VerticalAlignment="Bottom" d:LayoutOverrides="Width, Height" />
@@ -145,7 +145,7 @@
         <Border x:Name="aproposBtn" BorderThickness="1" HorizontalAlignment="Right" Height="63" Margin="0,0,18,20" VerticalAlignment="Bottom" Width="64" CornerRadius="100" Background="#00000000" MouseDown="apropos"/>
 
 
-        <Image x:Name="homeIcon" Source="icons/homeIcon.png" Height="80" Width="80" HorizontalAlignment="Left" Margin="335,70,0,0" VerticalAlignment="Top" Panel.ZIndex="1" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="homeIcon" Source="icons/homeIcon.png" ToolTip="Acceuil" ToolTipService.ShowDuration="2000" Height="80" Width="80" HorizontalAlignment="Left" Margin="335,70,0,0" VerticalAlignment="Top" Panel.ZIndex="1" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -157,6 +157,7 @@
         </Image>
         <Border x:Name="homeBorder" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="335,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000" OpacityMask="Black"/>
         <Image x:Name="eventIcon" Source="icons/eventIcon.png" Height="80" Width="80" Margin="545,70,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -166,8 +167,17 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Border x:Name="eventBrder" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="545,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000"/>
-        <Image x:Name="contactIcon" Source="icons/contactIcon.png" Height="80" Width="80" Margin="0,70,460,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height" MouseDown="versContact" RenderTransformOrigin="0.5,0.5">
+
+        <Border x:Name="eventBrder" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="545,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000">
+            <Border.ToolTip>
+                <ToolTip>
+                    <StackPanel>
+                        <TextBlock>Planning</TextBlock>
+                    </StackPanel>
+                </ToolTip>
+            </Border.ToolTip>
+        </Border>
+        <Image x:Name="contactIcon" Source="icons/contactIcon.png"  Height="80" Width="80" Margin="0,70,460,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height" MouseDown="versContact" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -177,7 +187,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Border x:Name="contactBorder" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,460,0" VerticalAlignment="Top" Width="80" Background="#00000000" MouseDown="versContact"/>
+        <Border x:Name="contactBorder" ToolTip="Contacts" ToolTipService.ShowDuration="2000" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,460,0" VerticalAlignment="Top" Width="80" Background="#00000000" MouseUp="versContact"/>
         <Image x:Name="hoidayIcon" Source="icons/holidayIcon.png" Height="80" Width="100" Margin="0,72.241,250.518,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -188,7 +198,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Border x:Name="holidayBorder" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,255,0" VerticalAlignment="Top" Width="95.518" Background="#00000000"/>
+        <Border x:Name="holidayBorder" ToolTip="Jours fériés" ToolTipService.ShowDuration="2000" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,250,0" VerticalAlignment="Top" Width="101" Background="#00000000"/>
         <Image x:Name="image" Margin="426,201,232,50" Source="icons/logo.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -201,6 +211,24 @@
         </Image>
         <Label x:Name="label" Content="Fakkarni" Margin="8,5,0,0" Width="212" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="40,0,5,5" FontSize="18" FontFamily="Segoe Print" FontWeight="Bold" Background="{x:Null}" Foreground="#FF0F688B" BorderThickness="0"/>
         <Image x:Name="image2" HorizontalAlignment="Left" Height="28" Margin="9,6,0,0" VerticalAlignment="Top" Width="34" Source="icons/logo.png"/>
+
+        <Menu x:Name="userMenu" Width="159" Height="44" HorizontalAlignment="Left" Margin="16,170,0,0" VerticalAlignment="Top">
+            <MenuItem Header="_Modifier le compte" Width="159" Height="22" Foreground="#FF0F688B" BorderBrush="{x:Null}" >
+                <MenuItem.Icon>
+                    <Image Source="icons/configIcon.png" Width="12" HorizontalAlignment="Right" Margin="0,2,2,2" />
+                </MenuItem.Icon>
+            </MenuItem>
+
+            <MenuItem Header="_Déconnecter" Height="22" Width="159" BorderBrush="{x:Null}" Foreground="#FF0F688B" Click="deconnexion" >
+                <MenuItem.Icon>
+                    <Image Source="icons/logoutIcon.png" Width="12" HorizontalAlignment="Right" Margin="0,2,2,2" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </Menu>
+
+        <Label x:Name="cnctdUser"  Margin="6,140,0,0" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left" Width="228" FontSize="14" BorderBrush="{x:Null}" FontWeight="Bold" Cursor="Hand" Height="42" MouseLeftButtonUp="showMenu"/>
+
+        <Image x:Name="image3" HorizontalAlignment="Left" Height="64" Margin="11,79,0,0" VerticalAlignment="Top" Width="48" Source="img/Person1.png" Cursor="Hand" MouseUp="showMenu"/>
 
     </Grid>
 </Window>

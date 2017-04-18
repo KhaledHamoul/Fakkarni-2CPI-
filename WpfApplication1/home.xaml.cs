@@ -27,6 +27,9 @@ namespace WpfApplication1
             InitializeComponent();
             this.win = win;
             this.userId = userId;
+            // cnctdUser.Content = "khaled";
+             cnctdUser.Content = App.Current.Resources["userName"].ToString();
+            //MessageBox.Show(App.Current.Resources["userName"].ToString() );
         }
 
         private void drag(object sender, MouseButtonEventArgs e)
@@ -89,6 +92,25 @@ namespace WpfApplication1
         private void apropos(object sender, MouseButtonEventArgs e)
         {
             Window win = new apropos();
+            win.Show();
+        }
+
+        private void showMenu(object sender, MouseButtonEventArgs e)
+        {
+            userMenu.Visibility = Visibility.Visible;
+        }
+
+        private void hideMenu(object sender, MouseButtonEventArgs e)
+        {
+            userMenu.Visibility = Visibility.Hidden;
+        }
+
+        private void deconnexion(object sender, RoutedEventArgs e)
+        {
+            App.Current.Resources["userName"] = -1;
+            App.Current.Resources["idUser"] = -1;
+            MainWindow win = new MainWindow();
+            this.Close();
             win.Show();
         }
     }

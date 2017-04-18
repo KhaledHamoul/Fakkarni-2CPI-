@@ -121,19 +121,27 @@
         <Rectangle x:Name="minimizeBtn" Height="40" VerticalAlignment="Top" Margin="1208,0,0,0" Panel.ZIndex="0" HorizontalAlignment="Left" Width="38" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" Opacity="0" Fill="Black"/>
         <Rectangle x:Name="closeBtnBack" Height="40" VerticalAlignment="Top" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" Opacity="0" Fill="White" HorizontalAlignment="Right" Width="35" Margin="0,0,-1,0"/>
         <Border BorderBrush="#FF2A84A8" BorderThickness="5,1" HorizontalAlignment="Right" Margin="0,167.512,566,-1.512" Width="5"/>
-        <Image x:Name="documentIcon" HorizontalAlignment="Right" Height="80" Margin="0,70,63,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5" Source="icons/IconDocument.png" MouseDown="versDocument"/>
+        <Image x:Name="documentIcon" ToolTip="Documents" ToolTipService.ShowDuration="2000" HorizontalAlignment="Left" Height="75" Margin="1115,70,0,0" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.5,0.5" MouseUp="versDocument" Source="icons/IconDocument.png">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
 
 
-
-        <ListView x:Name="listeContactes" BorderBrush="#FF3F7988" Background="{x:Null}" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="270,172.666,570,0" Height="371" VerticalAlignment="Top" Foreground="{x:Null}" BorderThickness="0,2,0,0" SelectionChanged="UpdateContact">
-            <ListView.ItemContainerStyle>
+        <ListBox x:Name="listeContactes" BorderBrush="#FF3F7988" Background="{x:Null}" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="270,172.666,570,0" Height="371" VerticalAlignment="Top" Foreground="{x:Null}" BorderThickness="0,2,0,0" SelectionChanged="UpdateContact">
+            <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="Height" Value="40"/>
                     <Setter Property="Foreground" Value="#FF56A5BA"/>
                     <Setter Property="FontSize" Value="20"/>
                     <Setter Property="FontWeight" Value="Bold"/>
                 </Style>
-            </ListView.ItemContainerStyle>
+            </ListBox.ItemContainerStyle>
             <!--  ******************************************************************** -->
 
             <!--***************************************************************************-->
@@ -144,7 +152,7 @@
                     <TextBlock Margin="40,0,5,0" FontSize="20" Width="238.66" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">Hamoul Khaled 1</TextBlock>
                 </StackPanel>
             </ListViewItem>               -->
-        </ListView>
+        </ListBox>
 
 
         <Button x:Name="ajouterContact" Content="Ajouter contacte" Margin="495,0,625,83.04" VerticalAlignment="Bottom" Height="29.96" Click="ajouterContacte" FontSize="16"/>
@@ -185,7 +193,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Border x:Name="homeBorder" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="335,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000" MouseDown="versHome"/>
+        <Border x:Name="homeBorder" ToolTip="Acceuil" ToolTipService.ShowDuration="2000" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="335,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000" MouseUp="versHome"/>
         <Image x:Name="eventIcon" Source="icons/eventIcon.png" Height="80" Width="80" Margin="545,70,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -196,7 +204,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Border x:Name="eventBorder" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="545,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000"/>
+        <Border x:Name="eventBorder" ToolTip="Planning" ToolTipService.ShowDuration="2000" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="545,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000"/>
         <Image x:Name="contactIcon" Source="icons/contactIcon.png" Height="80" Width="80" Margin="0,70,460,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -207,7 +215,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Border x:Name="contactBorder" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,460,0" VerticalAlignment="Top" Width="80" Background="#00000000"/>
+        <Border x:Name="contactBorder" ToolTip="Contacts" ToolTipService.ShowDuration="2000" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,460,0" VerticalAlignment="Top" Width="80" Background="#00000000"/>
         <Image x:Name="hoidayIcon" Source="icons/holidayIcon.png" Height="80" Width="100" Margin="0,72.241,250.518,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -218,7 +226,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Border x:Name="holidayBorder" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,255,0" VerticalAlignment="Top" Width="95.518" Background="#00000000"/>
+        <Border x:Name="holidayBorder" ToolTip="Jours fériés" ToolTipService.ShowDuration="2000" BorderThickness="1" HorizontalAlignment="Right" Height="80" Margin="0,70,255,0" VerticalAlignment="Top" Width="95.518" Background="#00000000"/>
 
         <Button x:Name="confirm" Content="confirmer" Margin="0,0,34,25" VerticalAlignment="Bottom" Height="30" Click="confirmer" HorizontalAlignment="Right" Width="116" Visibility="Hidden"/>
 
@@ -230,6 +238,8 @@
         <TextBox x:Name="siteChange" Margin="0,0,71.788,66.083" FontSize="16" Width="307" FontFamily="Comic Sans MS" Padding="0,5,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="46.957" Visibility="Hidden" Background="{x:Null}" BorderBrush="#FF267391" BorderThickness="0,0,0,1"/>
         <Label x:Name="label" Content="Fakkarni" Margin="8,5,0,0" Width="212" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="40,0,5,5" FontSize="18" FontFamily="Segoe Print" FontWeight="Bold" Background="{x:Null}" Foreground="#FF0F688B" BorderThickness="0"/>
         <Image x:Name="image2" HorizontalAlignment="Left" Height="28" Margin="9,6,0,0" VerticalAlignment="Top" Width="34" Source="icons/logo.png"/>
+        <Label x:Name="cnctdUser" Content="Hamoul Khaled" Margin="16,180,0,0" VerticalAlignment="Top" d:LayoutOverrides="Height" Foreground="#FFFBFBFB" HorizontalAlignment="Left" Width="228"/>
+        <Image x:Name="image3" HorizontalAlignment="Left" Height="64" Margin="196,190,0,0" VerticalAlignment="Top" Width="48" Source="img/Person1.png"/>
 
 
 

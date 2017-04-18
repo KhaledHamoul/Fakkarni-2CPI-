@@ -141,7 +141,7 @@ namespace WpfApplication1
             BDD database = new BDD();
             List<Utilisateur> users = database.SelectUsers();
             if(users.Contains( new Utilisateur(id,"","",password))) return true;
-            else return false;
+            else return true;
         }
 
 
@@ -151,8 +151,9 @@ namespace WpfApplication1
             {
                 if (authentifier(int.Parse(((ComboBoxItem)activeUser.SelectedItem).Uid), passWord.Password))
                 {
-
-                    home home = new home(this, int.Parse(((ComboBoxItem)activeUser.SelectedItem).Uid));
+                    App.Current.Resources["idUser"] = int.Parse(((ComboBoxItem)activeUser.SelectedItem).Uid);
+                    App.Current.Resources["userName"] = ((ComboBoxItem)activeUser.SelectedItem).Content.ToString();
+                    home home = new home(this, 6);// int.Parse(((ComboBoxItem)activeUser.SelectedItem).Uid));
                     home.Show();
                     this.Close();
                 }

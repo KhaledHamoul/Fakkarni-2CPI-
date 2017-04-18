@@ -125,7 +125,8 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image x:Name="newSessionBtnHover" RenderTransformOrigin="0.5,0.5" Width="65" Height="65" VerticalAlignment="Bottom" HorizontalAlignment="Left" Stretch="Fill" Margin="476.646,0,0,9.169" Source="Buttons/newSessionButtonHover.png" Panel.ZIndex="2" MouseEnter="newSessionMouseEnter" MouseLeave="newSessionMouseLeave" MouseDown="gotoInscriptionWindow" OpacityMask="Black" Visibility="Hidden" />
+        <Image x:Name="newSessionBtnHover" ToolTip="Créer un nouveau compte d'utilisateur"
+        ToolTipService.ShowDuration="2000" RenderTransformOrigin="0.5,0.5" Width="65" Height="65" VerticalAlignment="Bottom" HorizontalAlignment="Left" Stretch="Fill" Margin="476.646,0,0,9.169" Source="Buttons/newSessionButtonHover.png" Panel.ZIndex="2" MouseEnter="newSessionMouseEnter" MouseLeave="newSessionMouseLeave" MouseDown="gotoInscriptionWindow" OpacityMask="Black" Visibility="Hidden" />
         <ComboBox x:Name="activeUser" Margin="0,0,539.002,237" FontFamily="Comic Sans MS" RenderTransformOrigin="0,0" HorizontalContentAlignment="Center" Panel.ZIndex="2" HorizontalAlignment="Right" Width="200.231" Height="26" VerticalAlignment="Bottom" d:LayoutOverrides="VerticalAlignment" IsSynchronizedWithCurrentItem="False" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF267391" Background="{x:Null}"/>
 
         <PasswordBox x:Name="passWord" Margin="540.767,0,539.002,195"  SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Background="#00000000" TextOptions.TextHintingMode="Animated" FontFamily="Segoe Script" FontSize="14" Foreground="#FF1C3976" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Tag="*" Panel.ZIndex="2" Height="26" VerticalAlignment="Bottom" GotFocus="mdpGotFocus"/>
@@ -134,8 +135,10 @@
         <Image x:Name="iconCloseHover" Height="12" Source="icons/closeIconHover.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,165.328,492.416,0" Panel.ZIndex="3" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" HorizontalAlignment="Right" Width="12" Visibility="Hidden"/>
         <Image x:Name="minimizeHover" Height="3" Source="icons/minimizeHover.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,169.833,518.452,0" Panel.ZIndex="1" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" OpacityMask="{x:Null}" MouseDown="minimizeWindow" HorizontalAlignment="Right" Width="12"/>
         <Image x:Name="minimize" Height="3" Source="icons/minimize.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,169.833,518.33,0" Panel.ZIndex="1" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" HorizontalAlignment="Right" Width="12"/>
-        <Rectangle x:Name="minimizeBtn" Height="33.999" VerticalAlignment="Top" Margin="741.67,154.001,0,0" Panel.ZIndex="0" HorizontalAlignment="Left" Width="26" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" Opacity="0" Fill="Black"/>
-        <Rectangle x:Name="closeBtnBack" Height="33.999" VerticalAlignment="Top" Margin="0,154.001,485.5,0" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" Opacity="0" Fill="White" HorizontalAlignment="Right" Width="26"/>
+        <Rectangle x:Name="minimizeBtn" ToolTip="Minimiser la fenêtre"
+        ToolTipService.ShowDuration="2000" Height="33.999" VerticalAlignment="Top" Margin="741.67,154.001,0,0" Panel.ZIndex="0" HorizontalAlignment="Left" Width="26" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" Opacity="0" Fill="Black"/>
+        <Rectangle x:Name="closeBtnBack" ToolTip="Fermer la fenêtre"
+        ToolTipService.ShowDuration="2000" Height="33.999" VerticalAlignment="Top" Margin="0,154.001,485.5,0" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" Opacity="0" Fill="White" HorizontalAlignment="Right" Width="26"/>
         <Label x:Name="connexionLabel" Content="Connexion" Margin="631.67,0,0,162.49" FontSize="14" FontFamily="Comic Sans MS" Foreground="White" Cursor="Hand" VerticalAlignment="Bottom" Width="150" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" MouseDown="connexion" BorderThickness="0">
             <Label.RenderTransform>
                 <TransformGroup>
