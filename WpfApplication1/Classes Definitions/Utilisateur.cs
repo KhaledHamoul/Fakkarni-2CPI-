@@ -12,6 +12,7 @@ namespace WpfApplication1
         private string nom;
         private string prenom;
         private string mot_de_passe;
+        public int avatar { get; set; }
         private Activite[] activites;
         private Contact [] contacts;
         private Evenement [] evenements;
@@ -28,12 +29,13 @@ namespace WpfApplication1
             return nom.CompareTo(u.nom) * prenom.CompareTo(u.Prenom);
         }
 
-        public Utilisateur(int id, string nom, string prenom, string mot_de_passe)
+        public Utilisateur(int id, string nom, string prenom, string mot_de_passe,int avatar)
         {
             this.nom = nom;
             this.id = id;
             this.prenom = prenom;
             this.mot_de_passe = mot_de_passe;
+            this.avatar = avatar;
 
         }
 

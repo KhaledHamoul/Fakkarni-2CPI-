@@ -215,7 +215,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        
+
         <Image x:Name="image" Margin="426,201,232,50" Source="icons/logo.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -242,10 +242,11 @@
                 </MenuItem.Icon>
             </MenuItem>
         </Menu>
+        <StackPanel Margin="-1,72,0,0" HorizontalAlignment="Left" Width="271" Height="100" VerticalAlignment="Top" >
+            <Image x:Name="avatar" Height="64" Margin="0" Width="48" Source="img/Person1.png" Cursor="Hand" MouseUp="showMenu" HorizontalAlignment="Center"/>
 
-        <Label x:Name="cnctdUser"  Margin="6,140,0,0" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left" Width="228" FontSize="14" BorderBrush="{x:Null}" FontWeight="Bold" Cursor="Hand" Height="42" MouseLeftButtonUp="showMenu"/>
+            <Label x:Name="cnctdUser"  Margin="0" Foreground="White" Width="228" FontSize="14" BorderBrush="{x:Null}" FontWeight="Bold" Cursor="Hand" Height="42" MouseLeftButtonUp="showMenu" RenderTransformOrigin="0.478,-0.833" Content="hamoul khaled" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 
-        <Image x:Name="image3" HorizontalAlignment="Left" Height="64" Margin="11,79,0,0" VerticalAlignment="Top" Width="48" Source="img/Person1.png" Cursor="Hand" MouseUp="showMenu"/>
-
+        </StackPanel>
     </Grid>
 </Window>

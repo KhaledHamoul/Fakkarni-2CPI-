@@ -27,6 +27,8 @@ namespace WpfApplication1
             InitializeComponent();
             initialiserListBox();
             cnctdUser.Content = App.Current.Resources["userName"].ToString();
+            string url = @"img\Person" + App.Current.Resources["avatar"].ToString() + ".png";
+            avatar.Source = new BitmapImage(new Uri(url, UriKind.Relative));
 
 
 

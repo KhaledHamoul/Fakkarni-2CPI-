@@ -11,14 +11,14 @@
         <Storyboard x:Key="OnMouseEnter1">
             <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="border">
                 <EasingColorKeyFrame KeyTime="0" Value="#FF3B5998"/>
-                <EasingColorKeyFrame KeyTime="0:0:0.4" Value="#FFDE0F5A"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.4" Value="#FF267391"/>
             </ColorAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="OnMouseEnter2"/>
         <Storyboard x:Key="OnMouseLeave1">
             <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="border">
-                <EasingColorKeyFrame KeyTime="0" Value="#FFDE0F5A"/>
-                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FF3B5998"/>
+                <EasingColorKeyFrame KeyTime="0" Value="#FF267391"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FF3B5998"/> 
             </ColorAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="OnMouseLeftButtonDown1"/>
@@ -26,7 +26,7 @@
         <Storyboard x:Key="mouseEntreCnxnBtn">
             <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="connexionLabel">
                 <EasingColorKeyFrame KeyTime="0" Value="White"/>
-                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FFDE0F5A"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FF267391"/>
             </ColorAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="connexionLabel">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
@@ -37,14 +37,14 @@
         </Storyboard>
         <Storyboard x:Key="OnMouseLeaveCnxnBtn">
             <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="connexionLabel">
-                <EasingColorKeyFrame KeyTime="0" Value="#FFDE0F5A"/>
+                <EasingColorKeyFrame KeyTime="0" Value="#FF267300"/>
                 <EasingColorKeyFrame KeyTime="0:0:0.6" Value="White"/>
             </ColorAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="mehdi">
             <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="border">
                 <EasingColorKeyFrame KeyTime="0" Value="White"/>
-                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FF134D93"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FF134D00"/>
             </ColorAnimationUsingKeyFrames>
             <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderThickness)" Storyboard.TargetName="border">
                 <EasingThicknessKeyFrame KeyTime="0" Value="2"/>
@@ -62,12 +62,12 @@
         <Storyboard x:Key="listeUsersMouseEnter">
             <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="border1">
                 <EasingColorKeyFrame KeyTime="0" Value="#FF267391"/>
-                <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#FFDE0F5A"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#FF267391"/>
             </ColorAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="listUsersMouseLeave">
             <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="border1">
-                <EasingColorKeyFrame KeyTime="0" Value="#FFDE0F5A"/>
+                <EasingColorKeyFrame KeyTime="0" Value="#FF267391"/>
                 <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#FF267391"/>
             </ColorAnimationUsingKeyFrames>
         </Storyboard>
@@ -103,7 +103,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Image x:Name="back" Source="img/back.png" Margin="380,75.833,0,0" OpacityMask="#FFDE0000" Height="584.167" VerticalAlignment="Top" HorizontalAlignment="Left" Width="495.868" MouseDown="backMouseDown" Focusable="True"/>
-        <Image x:Name="profilPhoto" Source="img/profilPhoto.png" Stretch="Fill" Margin="0,202.834,582,0" RenderTransformOrigin="0.786,-0.087" Panel.ZIndex="1" HorizontalAlignment="Right" Width="117" Height="115" VerticalAlignment="Top" >
+        <Image x:Name="profilPhoto" Source="img/profilPhoto.png" Stretch="Fill" Margin="0,216,580,330" RenderTransformOrigin="0.786,-0.087" Panel.ZIndex="1" HorizontalAlignment="Right" Width="109" >
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -127,7 +127,7 @@
         </Image>
         <Image x:Name="newSessionBtnHover" ToolTip="Créer un nouveau compte d'utilisateur"
         ToolTipService.ShowDuration="2000" RenderTransformOrigin="0.5,0.5" Width="65" Height="65" VerticalAlignment="Bottom" HorizontalAlignment="Left" Stretch="Fill" Margin="476.646,0,0,9.169" Source="Buttons/newSessionButtonHover.png" Panel.ZIndex="2" MouseEnter="newSessionMouseEnter" MouseLeave="newSessionMouseLeave" MouseDown="gotoInscriptionWindow" OpacityMask="Black" Visibility="Hidden" />
-        <ComboBox x:Name="activeUser" Margin="0,0,539.002,237" FontFamily="Comic Sans MS" RenderTransformOrigin="0,0" HorizontalContentAlignment="Center" Panel.ZIndex="2" HorizontalAlignment="Right" Width="200.231" Height="26" VerticalAlignment="Bottom" d:LayoutOverrides="VerticalAlignment" IsSynchronizedWithCurrentItem="False" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF267391" Background="{x:Null}"/>
+        <ComboBox x:Name="activeUser" Margin="0,0,539.002,237" FontFamily="Comic Sans MS" RenderTransformOrigin="0,0" HorizontalContentAlignment="Center" Panel.ZIndex="2" HorizontalAlignment="Right" Width="200.231" Height="26" VerticalAlignment="Bottom" d:LayoutOverrides="VerticalAlignment" IsSynchronizedWithCurrentItem="False" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF267391" Background="{x:Null}" SelectionChanged="change_selected_user"/>
 
         <PasswordBox x:Name="passWord" Margin="540.767,0,539.002,195"  SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Background="#00000000" TextOptions.TextHintingMode="Animated" FontFamily="Segoe Script" FontSize="14" Foreground="#FF1C3976" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Tag="*" Panel.ZIndex="2" Height="26" VerticalAlignment="Bottom" GotFocus="mdpGotFocus"/>
         <Border x:Name="border" BorderThickness="1" Margin="0,0,539.002,195" BorderBrush="#FF267391" OpacityMask="{x:Null}" RenderTransformOrigin="0.651,0.163" Panel.ZIndex="2" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="200.231"/>
@@ -151,6 +151,7 @@
         </Label>
         <Label x:Name="mdpLabel" Content="mot de passe" Margin="541,0,539,194" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="#4C000000" HorizontalContentAlignment="Center" Height="31" FontFamily="Comic Sans MS" VerticalContentAlignment="Center" FontSize="14"/>
         <Border x:Name="border1" BorderBrush="#FF267391" BorderThickness="1" Height="26" Margin="540.767,0,539.002,237" VerticalAlignment="Bottom" Panel.ZIndex="2"/>
+        <Image x:Name="image2" Height="128" Margin="467,0,0,81" VerticalAlignment="Bottom" Source="icons/logo.png" HorizontalAlignment="Left" Width="132"/>
 
 
 

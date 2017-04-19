@@ -131,7 +131,7 @@ namespace WpfApplication1
 
         public void Insert(Utilisateur u)
         {
-            string query = "INSERT INTO users VALUES ('" + u.Nom + "','" + u.Prenom + "','" + u.Mot_de_passe + "');";
+            string query = "INSERT INTO users VALUES ('" + u.Nom + "','" + u.Prenom + "','" + u.Mot_de_passe + "','" + u.avatar + "');";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -522,7 +522,7 @@ namespace WpfApplication1
                     tab = new List<Utilisateur>();
                     while (reader.Read())
                     {
-                        tab.Add(new Utilisateur(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3)));
+                        tab.Add(new Utilisateur(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4)));
 
                     }
                 }
@@ -584,7 +584,7 @@ namespace WpfApplication1
 
         public void Update(Utilisateur u)
         {
-            string query = "UPDATE users SET nom =  '" + u.Nom + "' , prenom='" + u.Prenom + "' , password =  '" + u.Mot_de_passe + "' WHERE id=" + u.Id + ";";
+            string query = "UPDATE users SET nom =  '" + u.Nom + "' , prenom='" + u.Prenom + "' , password =  '" + u.Mot_de_passe + "' , avatar ='"+ u.avatar + "' WHERE id=" + u.Id + ";";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);

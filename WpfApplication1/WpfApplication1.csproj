@@ -131,8 +131,8 @@
   <ItemGroup>
     <Resource Include="icons\logoutIcon.png" />
     <Resource Include="icons\configIcon.png" />
-    <Resource Include="img\Perso5.png" />
-    <Resource Include="img\Perso6.png" />
+    <Resource Include="img\Person5.png" />
+    <Resource Include="img\Person6.png" />
     <Resource Include="img\Person1.png" />
     <Resource Include="img\Person2.png" />
     <Resource Include="img\Person3.png" />

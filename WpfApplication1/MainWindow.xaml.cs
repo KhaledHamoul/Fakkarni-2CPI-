@@ -20,12 +20,13 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Utilisateur> users;
         public MainWindow()
         {
             InitializeComponent();
             this.Focusable = true;
             BDD bdd = new BDD();
-            List<Utilisateur> users = bdd.SelectUsers();
+            this.users = bdd.SelectUsers();
             ComboBoxItem item = new ComboBoxItem();
 
             try
@@ -36,6 +37,7 @@ namespace WpfApplication1
                     item.Content = users[i].Prenom + "  " + users[i].Nom;
                     item.Uid = users[i].Id.ToString();
                     item.Name = "user" + (i + 1).ToString();
+                    item.Tag = i.ToString();
                     activeUser.Items.Add(item);
                 }
             } catch (Exception ex) { }
@@ -140,7 +142,7 @@ namespace WpfApplication1
         {
             BDD database = new BDD();
             List<Utilisateur> users = database.SelectUsers();
-            if(users.Contains( new Utilisateur(id,"","",password))) return true;
+            if(users.Contains( new Utilisateur(id,"","",password,-1))) return true;
             else return true;
         }
 
@@ -165,6 +167,17 @@ namespace WpfApplication1
             }
         }
 
+       
+       
+
+      
+        private void change_selected_user(object sender, SelectionChangedEventArgs e)
+        {
+            App.Current.Resources["avatar"] = this.users[int.Parse(((ComboBoxItem)activeUser.SelectedItem).Tag.ToString())].avatar;
+            string url = @"img\Person" + App.Current.Resources["avatar"].ToString() + ".png";
+            profilPhoto.Source = new BitmapImage(new Uri(url, UriKind.Relative));
+           
+        }
     }
 
 
