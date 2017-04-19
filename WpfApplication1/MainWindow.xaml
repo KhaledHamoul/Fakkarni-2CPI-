@@ -149,7 +149,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="mdpLabel" Content="mot de passe" Margin="541,0,539,194" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="#4C000000" HorizontalContentAlignment="Center" Height="31" FontFamily="Comic Sans MS" VerticalContentAlignment="Center" FontSize="14"/>
+        <Label x:Name="mdpLabel" Content="mot de passe" Margin="541,0,539,194" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="#4C000000" HorizontalContentAlignment="Center" Height="31" FontFamily="Comic Sans MS" VerticalContentAlignment="Center" FontSize="14" BorderThickness="0"/>
         <Border x:Name="border1" BorderBrush="#FF267391" BorderThickness="1" Height="26" Margin="540.767,0,539.002,237" VerticalAlignment="Bottom" Panel.ZIndex="2"/>
         <Image x:Name="image2" Height="128" Margin="467,0,0,81" VerticalAlignment="Bottom" Source="icons/logo.png" HorizontalAlignment="Left" Width="132"/>
 
