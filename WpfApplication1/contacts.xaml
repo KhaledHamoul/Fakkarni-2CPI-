@@ -109,6 +109,12 @@
         <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="holidayBorder">
             <BeginStoryboard x:Name="hollidayLeave_BeginStoryboard" Storyboard="{StaticResource hollidayLeave}"/>
         </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="documentIcon">
+            <BeginStoryboard x:Name="documentIconEnter_BeginStoryboard" Storyboard="{StaticResource documentEnter}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="documentIcon">
+            <BeginStoryboard x:Name="documentIconLeave_BeginStoryboard" Storyboard="{StaticResource documentLeave}"/>
+        </EventTrigger>
     </Window.Triggers>
     <Grid Focusable="True">
         <Image x:Name="back" Source="img/home_Page.png" Margin="-10,-10,-14,-4" Height="734" Width="1304" Focusable="True" MouseDown="hideMenu" />
