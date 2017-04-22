@@ -111,8 +111,8 @@ namespace WpfApplication1
 
         private void gotoInscriptionWindow(object sender, MouseButtonEventArgs e)
         {
-            Window win;
-           // win.Show();
+            Window win = new NouvelleSession();
+            win.Show();
             this.Close();
         }
 
@@ -143,7 +143,7 @@ namespace WpfApplication1
             BDD database = new BDD();
             List<Utilisateur> users = database.SelectUsers();
             if(users.Contains( new Utilisateur(id,"","",password,-1))) return true;
-            else return true;
+            else return false;
         }
 
 
@@ -155,7 +155,7 @@ namespace WpfApplication1
                 {
                     App.Current.Resources["idUser"] = int.Parse(((ComboBoxItem)activeUser.SelectedItem).Uid);
                     App.Current.Resources["userName"] = ((ComboBoxItem)activeUser.SelectedItem).Content.ToString();
-                    home home = new home(this, 6);// int.Parse(((ComboBoxItem)activeUser.SelectedItem).Uid));
+                    home home = new home(this,int.Parse(((ComboBoxItem)activeUser.SelectedItem).Uid));
                     home.Show();
                     this.Close();
                 }

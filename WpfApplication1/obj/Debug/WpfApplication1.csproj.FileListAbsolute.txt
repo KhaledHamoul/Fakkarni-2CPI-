@@ -78,3 +78,5 @@ C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\D
 C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\DocumentsWindow.g.cs
 C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\DocumentsWindow.baml
 C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\App.baml
+C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\NouvelleSession.g.cs
+C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\NouvelleSession.baml

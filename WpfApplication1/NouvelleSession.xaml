@@ -1,0 +1,56 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="WpfApplication1.NouvelleSession"
+        mc:Ignorable="d"
+        Title="NouvelleSession" Height="720" Width="1280" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen">
+
+
+    <Grid Background="#00000000">
+        <Image x:Name="Fenetre" Source="img/home_page.png" Margin="-9,-15,-15,-9" Focusable="True" Height="734" MouseDown="back_mouse_down" />
+        <Border BorderThickness="1" Height="40" Margin="0,0,72,0" VerticalAlignment="Top" Background="#00EA3F3F" MouseDown="drag"/>
+
+
+        <Image x:Name="iconClose" HorizontalAlignment="Right" Height="12" Source="icons/closeIcon.png" Stretch="Fill" VerticalAlignment="Top" Width="12" Margin="0,15,10,0" Panel.ZIndex="1" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close"  OpacityMask="Red"/>
+        <Image x:Name="iconCloseHover" Height="12" Source="icons/closeIconHover.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,15,10,0" Panel.ZIndex="3" MouseEnter="mouseEnter" MouseLeave="mouseLeave" MouseDown="close" HorizontalAlignment="Right" Width="12" Visibility="Hidden"/>
+        <Image x:Name="minimizeHover" Height="3" Source="icons/minimizeHover.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,19,47,0" Panel.ZIndex="1" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" OpacityMask="{x:Null}" MouseDown="minimizeWindow" HorizontalAlignment="Right" Width="12"/>
+        <Image x:Name="minimize" Height="3" Source="icons/minimize.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,19,47,0" Panel.ZIndex="1" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" MouseDown="minimizeWindow" HorizontalAlignment="Right" Width="12"/>
+        <Rectangle x:Name="minimizeBtn" ToolTip="Minimiser la fenêtre" ToolTipService.ShowDuration="2000" Height="40" VerticalAlignment="Top" Margin="1208,0,0,0" Panel.ZIndex="0" HorizontalAlignment="Left" Width="38" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" Opacity="0" Fill="Black" MouseUp="minimizeWindow"/>
+        <Rectangle x:Name="closeBtnBack" ToolTip="Fermer la fenêtre" ToolTipService.ShowDuration="2000" Height="40" VerticalAlignment="Top" MouseEnter="mouseEnter" MouseLeave="mouseLeave" Opacity="0" Fill="White" HorizontalAlignment="Right" Width="35" Margin="0,0,-1,0" MouseUp="close"/>
+
+
+
+        <Image x:Name="PhotoDeProfile" HorizontalAlignment="Right" Width="67" Source="img/Person1.png" Margin="0,333,132,262"/>
+        <Button x:Name="annuler" Content="Annuler" HorizontalAlignment="Left" Margin="1054,614,0,0" VerticalAlignment="Top" Width="123" Height="41" Click="annuler_Click"/>
+        <Image x:Name="Previous" Source="icons/left.png" MouseLeftButtonDown="PreviousImage" Margin="0,0,229,284" HorizontalAlignment="Right" Width="46" Height="45" VerticalAlignment="Bottom"/>
+        <Image x:Name="Next" Source="icons/left.png" MouseLeftButtonDown="NextImage" Margin="0,0,73,284" HorizontalAlignment="Right" Width="46" RenderTransformOrigin="0.5,0.5" Height="45" VerticalAlignment="Bottom">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <TextBox x:Name="nom" Height="28" Margin="623,260,371,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF267391" VerticalContentAlignment="Center" FontSize="18.667" Panel.ZIndex="2" FontFamily="Comic Sans MS"/>
+        <TextBox x:Name="prenom" Height="Auto" Margin="623,345,371,347" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="#FF267391" VerticalContentAlignment="Center" FontSize="18.667" Panel.ZIndex="2" FontFamily="Comic Sans MS"/>
+        <PasswordBox x:Name="motDePass" Margin="623,0,371,262" VerticalAlignment="Bottom" Height="28" BorderBrush="#FF267391" Background="{x:Null}" VerticalContentAlignment="Center" SelectionBrush="#FF3399FF" Foreground="#FF56A5BA" FontSize="18.667" BorderThickness="0,0,0,1" Password="" Panel.ZIndex="2" FontFamily="Comic Sans MS"/>
+        <PasswordBox x:Name="confirmerMDP" Margin="623,0,371,182" VerticalAlignment="Bottom" Height="28" BorderBrush="#FF267391" Background="{x:Null}" VerticalContentAlignment="Center" SelectionBrush="#FF3399FF" Foreground="#FF56A5BA" FontSize="18.667" BorderThickness="0,0,0,1" Password="" Panel.ZIndex="2" FontFamily="Comic Sans MS"/>
+        
+        
+        <Label x:Name="nom_lab" Opacity="0.7" Content="Nom" Margin="624,248,371,0" VerticalAlignment="Top" d:LayoutOverrides="Height" FontWeight="Normal" BorderThickness="0" FontFamily="Comic Sans MS"/>
+        <Label x:Name="prenom_lab" Opacity="0.7" Content="Prénom" Margin="625,332,371,348" FontWeight="Normal" BorderThickness="0" FontFamily="Comic Sans MS"/>
+        <Label x:Name="mdp_lab" Opacity="0.7" Content="Mot de passe" Margin="623,0,366,262" VerticalAlignment="Bottom" d:LayoutOverrides="Height" FontWeight="Normal" BorderThickness="0" FontFamily="Comic Sans MS"/>
+        <Label x:Name="mdpc_lab" Opacity="0.7" Content="Confirmer le mot de passe" Margin="624,0,355,182" VerticalAlignment="Bottom" d:LayoutOverrides="Height" FontWeight="Normal" BorderThickness="0" FontFamily="Comic Sans MS"/>
+        <Label x:Name="label_Copy3" Content="Fakkarni" Margin="8,5,0,0" Width="212" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="40,0,5,5" FontSize="18" FontFamily="Segoe Print" FontWeight="Bold" Background="{x:Null}" Foreground="#FF0F688B" BorderThickness="0"/>
+        <Image x:Name="image2" HorizontalAlignment="Left" Height="28" Margin="9,6,0,0" VerticalAlignment="Top" Width="34" Source="icons/logo.png"/>
+        <Image x:Name="image2_Copy" HorizontalAlignment="Left" Margin="291,256,0,223" Width="251" Source="icons/logo.png"/>
+        <Button x:Name="confirmer" Content="Confirmer" HorizontalAlignment="Left" Margin="626,614,0,0" VerticalAlignment="Top" Width="285" Height="41" Click="confirmer_Click"/>
+
+    </Grid>
+</Window>

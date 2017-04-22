@@ -103,7 +103,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Image x:Name="back" Source="img/back.png" Margin="380,75.833,0,0" OpacityMask="#FFDE0000" Height="584.167" VerticalAlignment="Top" HorizontalAlignment="Left" Width="495.868" MouseDown="backMouseDown" Focusable="True"/>
-        <Image x:Name="profilPhoto" Source="img/profilPhoto.png" Stretch="Fill" Margin="0,216,580,330" RenderTransformOrigin="0.786,-0.087" Panel.ZIndex="1" HorizontalAlignment="Right" Width="109" >
+        <Image x:Name="profilPhoto" Source="img/profilPhoto.png" Stretch="Fill" Margin="0,216,587,330" RenderTransformOrigin="0.786,-0.087" Panel.ZIndex="1" HorizontalAlignment="Right" Width="109" >
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

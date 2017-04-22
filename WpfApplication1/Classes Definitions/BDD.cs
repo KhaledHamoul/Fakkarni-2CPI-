@@ -537,6 +537,29 @@ namespace WpfApplication1
         }
 
 
+        public Utilisateur SelectUser(Utilisateur u)
+        {
+            string query = "SELECT * FROM users WHERE nom = '" + u.Nom + "' AND prenom = '" + u.Prenom + "' AND password = '" + u.Mot_de_passe + "' ;";   
+            if (this.OpenConnection() == true)
+            {
+                SqlCommand cmd = new SqlCommand(query, connection);
+                Utilisateur user;
+                try
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+                    return user = new Utilisateur(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4));
+                    
+                }
+                catch (SqlException ex)
+                {
+                    return null;
+                }
+                this.CloseConnection();                
+            }
+            else return null;
+        }
+
 
         public void Update(Activite a)
         {
