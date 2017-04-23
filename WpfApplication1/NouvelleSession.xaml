@@ -36,10 +36,10 @@
             </Image.RenderTransform>
         </Image>
 
-        <TextBox x:Name="nom" Height="28" Margin="623,260,371,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF267391" VerticalContentAlignment="Center" FontSize="18.667" Panel.ZIndex="2" FontFamily="Comic Sans MS"/>
-        <TextBox x:Name="prenom" Height="Auto" Margin="623,345,371,347" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="#FF267391" VerticalContentAlignment="Center" FontSize="18.667" Panel.ZIndex="2" FontFamily="Comic Sans MS"/>
-        <PasswordBox x:Name="motDePass" Margin="623,0,371,262" VerticalAlignment="Bottom" Height="28" BorderBrush="#FF267391" Background="{x:Null}" VerticalContentAlignment="Center" SelectionBrush="#FF3399FF" Foreground="#FF56A5BA" FontSize="18.667" BorderThickness="0,0,0,1" Password="" Panel.ZIndex="2" FontFamily="Comic Sans MS"/>
-        <PasswordBox x:Name="confirmerMDP" Margin="623,0,371,182" VerticalAlignment="Bottom" Height="28" BorderBrush="#FF267391" Background="{x:Null}" VerticalContentAlignment="Center" SelectionBrush="#FF3399FF" Foreground="#FF56A5BA" FontSize="18.667" BorderThickness="0,0,0,1" Password="" Panel.ZIndex="2" FontFamily="Comic Sans MS"/>
+        <TextBox x:Name="nom" Height="28" Margin="623,260,371,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF267391" VerticalContentAlignment="Center" FontSize="18.667" Panel.ZIndex="2" FontFamily="Comic Sans MS" GotFocus="nomfocus"/>
+        <TextBox x:Name="prenom" Height="Auto" Margin="623,345,371,347" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="#FF267391" VerticalContentAlignment="Center" FontSize="18.667" Panel.ZIndex="2" FontFamily="Comic Sans MS" GotFocus="prenomfocus"/>
+        <PasswordBox x:Name="motDePass" Margin="623,0,371,262" VerticalAlignment="Bottom" Height="28" BorderBrush="#FF267391" Background="{x:Null}" VerticalContentAlignment="Center" SelectionBrush="#FF3399FF" Foreground="#FF56A5BA" FontSize="18.667" BorderThickness="0,0,0,1" Password="" Panel.ZIndex="2" FontFamily="Comic Sans MS" GotFocus="mdpfocus"/>
+        <PasswordBox x:Name="confirmerMDP" Margin="623,0,371,182" VerticalAlignment="Bottom" Height="28" BorderBrush="#FF267391" Background="{x:Null}" VerticalContentAlignment="Center" SelectionBrush="#FF3399FF" Foreground="#FF56A5BA" FontSize="18.667" BorderThickness="0,0,0,1" Password="" Panel.ZIndex="2" FontFamily="Comic Sans MS" GotFocus="mdpConfocus"/>
 
 
         <Label x:Name="nom_lab" Opacity="0.7" Content="Nom" Margin="624,248,371,0" VerticalAlignment="Top" d:LayoutOverrides="Height" FontWeight="Normal" BorderThickness="0" FontFamily="Comic Sans MS" />

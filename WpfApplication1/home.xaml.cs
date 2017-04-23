@@ -121,5 +121,12 @@ namespace WpfApplication1
             this.Close();
             win.Show();
         }
+
+        private void useConfig(object sender, RoutedEventArgs e)
+        {
+            AcountConfig win = new AcountConfig();
+            win.Show();
+            this.Close();
+        }
     }
 }

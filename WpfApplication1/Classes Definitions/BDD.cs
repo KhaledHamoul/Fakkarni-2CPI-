@@ -560,6 +560,29 @@ namespace WpfApplication1
             else return null;
         }
 
+        public Utilisateur SelectUser(int id)
+        {
+            string query = "SELECT * FROM users WHERE id = " + id + " ;";
+            if (this.OpenConnection() == true)
+            {
+                SqlCommand cmd = new SqlCommand(query, connection);
+                Utilisateur user;
+                try
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+                    return user = new Utilisateur(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4));
+
+                }
+                catch (SqlException ex)
+                {
+                    return null;
+                }
+                this.CloseConnection();
+            }
+            else return null;
+        }
+
 
         public void Update(Activite a)
         {

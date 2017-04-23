@@ -230,7 +230,7 @@
         <Image x:Name="image2" HorizontalAlignment="Left" Height="28" Margin="9,6,0,0" VerticalAlignment="Top" Width="34" Source="icons/logo.png"/>
 
         <Menu x:Name="userMenu" Width="159" Height="44" HorizontalAlignment="Left" Margin="16,170,0,0" VerticalAlignment="Top" Visibility="Hidden">
-            <MenuItem Header="_Modifier le compte" Width="159" Height="22" Foreground="#FF0F688B" BorderBrush="{x:Null}" >
+            <MenuItem Header="_Modifier le compte" Width="159" Height="22" Foreground="#FF0F688B" BorderBrush="{x:Null}" Click="useConfig" >
                 <MenuItem.Icon>
                     <Image Source="icons/configIcon.png" Width="12" HorizontalAlignment="Right" Margin="0,2,2,2" />
                 </MenuItem.Icon>

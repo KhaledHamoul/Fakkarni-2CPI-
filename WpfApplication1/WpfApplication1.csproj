@@ -70,6 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AcountConfig.xaml.cs">
+      <DependentUpon>AcountConfig.xaml</DependentUpon>
+    </Compile>
     <Compile Include="apropos.xaml.cs">
       <DependentUpon>apropos.xaml</DependentUpon>
     </Compile>
@@ -190,6 +193,10 @@
     <Folder Include="Windows\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="AcountConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="apropos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

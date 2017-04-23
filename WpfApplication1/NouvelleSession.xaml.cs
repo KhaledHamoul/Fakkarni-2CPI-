@@ -84,10 +84,7 @@ namespace WpfApplication1
             DragMove();
         }
 
-        private void WindowFocus(object sender, MouseButtonEventArgs e)
-        {
-            Fenetre.Focus();
-        }
+        
 
         private void PreviousImage(object sender, MouseButtonEventArgs e)
         {
@@ -161,6 +158,46 @@ namespace WpfApplication1
         private void back_mouse_down(object sender, MouseButtonEventArgs e)
         {
             Fenetre.Focus();
+            if (nom.Text == "") nom_lab.Visibility = Visibility.Visible;
+            if (prenom.Text == "") prenom_lab.Visibility = Visibility.Visible;
+            if (motDePass.Password == "") mdp_lab.Visibility = Visibility.Visible;
+            if (confirmerMDP.Password == "") mdpc_lab.Visibility = Visibility.Visible;
+        }
+
+        private void nomfocus(object sender, RoutedEventArgs e)
+        {
+            nom_lab.Visibility = Visibility.Hidden;
+
+            if (prenom.Text == "") prenom_lab.Visibility = Visibility.Visible;
+            if (motDePass.Password == "") mdp_lab.Visibility = Visibility.Visible;
+            if (confirmerMDP.Password == "") mdpc_lab.Visibility = Visibility.Visible;
+        }
+
+        private void prenomfocus(object sender, RoutedEventArgs e)
+        {
+            prenom_lab.Visibility = Visibility.Hidden;
+
+            if (nom.Text == "") nom_lab.Visibility = Visibility.Visible;
+            if (motDePass.Password == "") mdp_lab.Visibility = Visibility.Visible;
+            if (confirmerMDP.Password == "") mdpc_lab.Visibility = Visibility.Visible;
+        }
+
+        private void mdpfocus(object sender, RoutedEventArgs e)
+        {
+            mdp_lab.Visibility = Visibility.Hidden;
+
+            if (nom.Text == "") nom_lab.Visibility = Visibility.Visible;
+            if (prenom.Text == "") prenom_lab.Visibility = Visibility.Visible;
+            if (confirmerMDP.Password == "") mdpc_lab.Visibility = Visibility.Visible;
+        }
+
+        private void mdpConfocus(object sender, RoutedEventArgs e)
+        {
+            mdpc_lab.Visibility = Visibility.Hidden;
+
+            if (nom.Text == "") nom_lab.Visibility = Visibility.Visible;
+            if (prenom.Text == "") prenom_lab.Visibility = Visibility.Visible;
+            if (motDePass.Password == "") mdp_lab.Visibility = Visibility.Visible;
         }
     }
 }

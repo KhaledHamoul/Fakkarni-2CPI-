@@ -253,7 +253,7 @@
 
 
         <Menu x:Name="userMenu" Width="159" Height="44" HorizontalAlignment="Left" Margin="16,170,0,0" VerticalAlignment="Top" Visibility="Hidden">
-            <MenuItem Header="_Modifier le compte" Width="159" Height="22" Foreground="#FF0F688B" BorderBrush="{x:Null}" >
+            <MenuItem Click="useConfig" Header="_Modifier le compte" Width="159" Height="22" Foreground="#FF0F688B" BorderBrush="{x:Null}" >
                 <MenuItem.Icon>
                     <Image Source="icons/configIcon.png" Width="12" HorizontalAlignment="Right" Margin="0,2,2,2" />
                 </MenuItem.Icon>
