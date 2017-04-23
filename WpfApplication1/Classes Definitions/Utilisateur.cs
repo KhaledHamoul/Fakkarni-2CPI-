@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApplication1
 {
-    class Utilisateur
+   public class Utilisateur
     {
         private int id;
         private string nom;

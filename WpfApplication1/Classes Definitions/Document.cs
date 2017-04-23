@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApplication1
 {
-    class Document
+   public class Document
     {
         private int id ;
         private string titre;

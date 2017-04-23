@@ -174,7 +174,7 @@
             </Image.RenderTransform>
         </Image>
 
-        <Border x:Name="eventBrder" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="545,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000">
+        <Border x:Name="eventBrder" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="545,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000" MouseUp="versCalandar">
             <Border.ToolTip>
                 <ToolTip>
                     <StackPanel>

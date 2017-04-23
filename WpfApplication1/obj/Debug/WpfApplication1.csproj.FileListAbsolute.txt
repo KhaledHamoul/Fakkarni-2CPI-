@@ -82,3 +82,11 @@ C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\D
 C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\NouvelleSession.baml
 C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\AcountConfig.g.cs
 C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\AcountConfig.baml
+C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\Calandrier.g.cs
+C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\Calandrier.baml
+C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\MonthView.g.cs
+C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\MonthView.baml
+C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\DailyView.g.cs
+C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\DailyView.baml
+C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\WeeklyView.g.cs
+C:\Users\khaled Hamoul\Desktop\projet 2CPI\WpfApplication1\WpfApplication1\obj\Debug\WeeklyView.baml

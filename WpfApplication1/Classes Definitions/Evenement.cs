@@ -6,105 +6,25 @@ using System.Threading.Tasks;
 
 namespace WpfApplication1
 {
-    class Evenement
+    public class Evenement : Appointement
     {
-        private int id;
-        private string designation;
-        private string priorite;
-        private DateTime date;
-        private string lieu;
-        private List<Document> documents;
+        public string lieu;
 
-        public Evenement(int id, string designation,string priorite, DateTime date, string lieu)
+        public Evenement(int id, string designation,string priorite, DateTime dateDebut,DateTime dateFin, string lieu)
         {
-            this.Id = id;
-            this.Designation = designation;
-            this.Priorite = priorite;
-            this.Date = date;
-            this.Lieu = lieu;
+            this.id = id;
+            this.designation = designation;
+            this.priorite = priorite;
+            this.dateDebut = dateDebut;
+            this.dateFin = dateFin;
+            this.lieu = lieu;
         }
 
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
-        }
-
-        public string Designation
-        {
-            get
-            {
-                return designation;
-            }
-
-            set
-            {
-                designation = value;
-            }
-        }
-
-        public string Lieu
-        {
-            get
-            {
-                return lieu;
-            }
-
-            set
-            {
-                lieu = value;
-            }
-        }
-
-        public DateTime Date
-        {
-            get
-            {
-                return date;
-            }
-
-            set
-            {
-                date = value;
-            }
-        }
-
-        public string Priorite
-        {
-            get
-            {
-                return priorite;
-            }
-
-            set
-            {
-                priorite = value;
-            }
-        }
-
-        internal List<Document> Documents
-        {
-            get
-            {
-                return documents;
-            }
-
-            set
-            {
-                documents = value;
-            }
-        }
+       
 
         public void addDocument(Document d)
         {
-            Documents.Add(d);
+            documents.Add(d);
         }
 
     }

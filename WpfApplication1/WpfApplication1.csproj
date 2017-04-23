@@ -73,9 +73,16 @@
     <Compile Include="AcountConfig.xaml.cs">
       <DependentUpon>AcountConfig.xaml</DependentUpon>
     </Compile>
+    <Compile Include="appointementController.cs" />
     <Compile Include="apropos.xaml.cs">
       <DependentUpon>apropos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Calandrier.xaml.cs">
+      <DependentUpon>Calandrier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes Definitions\Appointement.cs" />
+    <Compile Include="Classes Definitions\BDD.cs" />
+    <Compile Include="Classes Definitions\Enumerations.cs" />
     <Compile Include="Classes Definitions\Tache.cs" />
     <Compile Include="Classes Definitions\Utilisateur.cs" />
     <Compile Include="Classes Definitions\Vacance.cs" />
@@ -84,15 +91,25 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes Definitions\BDD.cs" />
     <Compile Include="Classes Definitions\Contact.cs" />
     <Compile Include="Classes Definitions\Document.cs" />
     <Compile Include="Classes Definitions\Evenement.cs" />
     <Compile Include="contacts.xaml.cs">
       <DependentUpon>contacts.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DailyView.xaml.cs">
+      <DependentUpon>DailyView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DocumentsWindow.xaml.cs">
       <DependentUpon>DocumentsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MonthView.xaml.cs">
+      <DependentUpon>MonthView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Structs.cs" />
+    <Compile Include="TimeClass.cs" />
+    <Compile Include="WeeklyView.xaml.cs">
+      <DependentUpon>WeeklyView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +152,42 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Salah_Icons\add.ico" />
+    <Resource Include="Salah_Icons\add1.png" />
+    <Resource Include="Salah_Icons\add3.ico" />
+    <Resource Include="Salah_Icons\add3.png" />
+    <Resource Include="Salah_Icons\add4.png" />
+    <Resource Include="Salah_Icons\add5.png" />
+    <Resource Include="Salah_Icons\add6.ico" />
+    <Resource Include="Salah_Icons\add7.png" />
+    <Resource Include="Salah_Icons\alarme.png" />
+    <Resource Include="Salah_Icons\alarme1.png" />
+    <Resource Include="Salah_Icons\date.png" />
+    <Resource Include="Salah_Icons\date1.png" />
+    <Content Include="Salah_Icons\date1.svg" />
+    <Resource Include="Salah_Icons\date3.png" />
+    <Resource Include="Salah_Icons\day4.png" />
+    <Resource Include="Salah_Icons\day5.png" />
+    <Resource Include="Salah_Icons\day6.ico" />
+    <Resource Include="Salah_Icons\day7.png" />
+    <Resource Include="Salah_Icons\DayView.png" />
+    <Resource Include="Salah_Icons\delete.png" />
+    <Resource Include="Salah_Icons\delete1.ico" />
+    <Resource Include="Salah_Icons\delete2.png" />
+    <Resource Include="Salah_Icons\delete3.png" />
+    <Resource Include="Salah_Icons\delete4.png" />
+    <Resource Include="Salah_Icons\delete5.png" />
+    <Resource Include="Salah_Icons\green_flag.png" />
+    <Resource Include="Salah_Icons\modify.png" />
+    <Resource Include="Salah_Icons\modify1.png" />
+    <Resource Include="Salah_Icons\modify2.png" />
+    <Resource Include="Salah_Icons\red_flag.png" />
+    <Resource Include="Salah_Icons\warning.png" />
+    <Resource Include="Salah_Icons\Warning1.png" />
+    <Resource Include="icons\Down.png" />
+    <Resource Include="icons\Up.png" />
+    <Resource Include="icons\Next.ico" />
+    <Resource Include="icons\Previous.ico" />
     <Resource Include="icons\left.png" />
     <Resource Include="icons\logoutIcon.png" />
     <Resource Include="icons\configIcon.png" />
@@ -201,9 +254,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Calandrier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="contacts.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DailyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DocumentsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -217,9 +278,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MonthView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NouvelleSession.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WeeklyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

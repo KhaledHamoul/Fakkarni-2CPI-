@@ -189,15 +189,15 @@ namespace WpfApplication1
             App.Current.Resources["userName"] = -1;
             App.Current.Resources["idUser"] = -1;
             MainWindow win = new MainWindow();
-            this.Close();
+           // this.Close();
             win.Show();
         }
 
         private void useConfig(object sender, RoutedEventArgs e)
         {
             AcountConfig win = new AcountConfig();
-            win.Show();
-            this.Close();
+           // win.Show();
+           // this.Close();
         }
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApplication1
 {
-    class Activite
+    public class Activite
     {
         private int id;
         private string designation;

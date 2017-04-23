@@ -6,10 +6,10 @@ using System.Windows;
 
 namespace WpfApplication1
 {
-    class BDD
+    public class BDD
     {
         private SqlConnection connection;
-
+        private string format = "yyyy-MM-dd HH:mm:ss";
         public BDD()
         {
             string connectionString;     
@@ -19,18 +19,20 @@ namespace WpfApplication1
 
         public bool OpenConnection()
         {
+            
             try
             {
                 connection.Open();
                 return true;
             }
-            catch (SqlException ex)
+
+            catch (Exception ex)
             {
                 MessageBox.Show("Error opening connection.\n "+ex.Message);
                 return false;
             }
         }
-
+        
         private bool CloseConnection()
         {
             try
@@ -48,11 +50,8 @@ namespace WpfApplication1
         private void Execute(SqlCommand cmd)
         {
             try
-            {
-                
-                cmd.ExecuteNonQuery();
-                //MessageBox.Show("Execute success");
-                
+            {      
+                cmd.ExecuteNonQuery();                
             }
             catch (SqlException ex)
             {
@@ -64,7 +63,7 @@ namespace WpfApplication1
 
         public void Insert(Activite a, int idUser)
         {
-            string query = "INSERT INTO activities VALUES ('" + a.Designation + "','" + a.Type + "'," + idUser + ");";
+            string query = "INSERT INTO activities (designation,type,id_user) VALUES ('" + a.Designation + "','" + a.Type + "'," + idUser + ");";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -76,18 +75,20 @@ namespace WpfApplication1
 
         public void Insert(Tache t, int idUser, int idActivite)
         {
-            string query = "INSERT INTO tasks VALUES ('" + t.Designation + "','" + t.Priorite + "','" + t.Date.Year + "-" + t.Date.Month + "-" + t.Date.Day + " " + t.Date.TimeOfDay + "','" + t.Etat + "'," + idActivite + ", DEFAULT ," + idUser + ");";
+            
+            string query = "INSERT INTO tasks (designatin,priority,date,dateFin,state,id_activity,id_user) VALUES ('" + t.designation + "','" + t.priorite + "','" + t.dateDebut.ToString(format) + "','" + t.dateFin.ToString(format) + "','" + t.etat + "','" + idActivite  + "'," + idUser + ");";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
                 Execute(cmd);
                 this.CloseConnection();
             }
+            
         }
 
         public void Insert(Evenement e, int idUser)
         {
-            string query = "INSERT INTO events VALUES ('" + e.Designation + "','" + e.Priorite + "','" + e.Date.Year + "-" + e.Date.Month + "-" + e.Date.Day + " " + e.Date.TimeOfDay + "','" + e.Lieu + "',DEFAULT," + idUser + ");";
+            string query = "INSERT INTO events (designatin,priority,date,dateFin,place,id_user) VALUES ('" + e.designation + "','" + e.priorite + "','" + e.dateDebut.ToString(format) + "','" + e.dateFin.ToString(format) + "','" + e.lieu + "'," + idUser + ");";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -98,7 +99,7 @@ namespace WpfApplication1
 
         public void Insert(Contact c, int idUser)
         {
-            string query = "INSERT INTO contacts VALUES ('" + c.Nom + "','" + c.Adresse + "','" + c.NumTel + "','" + c.Email + "','" + c.Siteweb + "'," + idUser + ");";
+            string query = "INSERT INTO contacts (nom,adresse,numTel,email,website,id_user) VALUES ('" + c.Nom + "','" + c.Adresse + "','" + c.NumTel + "','" + c.Email + "','" + c.Siteweb + "'," + idUser + ");";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -109,7 +110,7 @@ namespace WpfApplication1
 
         public void Insert(Document d, int idUser)
         {
-            string query = "INSERT INTO documents VALUES ('" + d.Titre + "','" + d.Emplacement + "'," + idUser + ");";
+            string query = "INSERT INTO documents (designation,url,id_user) VALUES ('" + d.Titre + "','" + d.Emplacement + "'," + idUser + ");";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -120,18 +121,18 @@ namespace WpfApplication1
 
         public void Insert(Vacance h, int idUser)
         {
-            string query = "INSERT INTO holidays VALUES ('" + h.Designation + "','" + h.Date.Year + "-" + h.Date.Month + "-" + h.Date.Day + "'," + idUser + ");";
+            string query = "INSERT INTO holidays (designation,date,id_user) VALUES ('" + h.Designation + "','" + h.Date.Year + "-" + h.Date.Month + "-" + h.Date.Day + "'," + idUser + ");";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
                 Execute(cmd);
-                this.CloseConnection();
+                CloseConnection();
             }
         }
 
         public void Insert(Utilisateur u)
         {
-            string query = "INSERT INTO users VALUES ('" + u.Nom + "','" + u.Prenom + "','" + u.Mot_de_passe + "','" + u.avatar + "');";
+            string query = "INSERT INTO users (nom,prenom,password) VALUES ('" + u.Nom + "','" + u.Prenom + "','" + u.Mot_de_passe + "');";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -164,7 +165,6 @@ namespace WpfApplication1
                 Execute(cmd);
                 this.CloseConnection();
             }
-
         }
 
         public void DeleteEvenement(int id)
@@ -193,7 +193,7 @@ namespace WpfApplication1
 
         public void DeleteDocument(int id)
         {
-            string query = "DELETE  FROM documents WHERE id=" + id + ";";
+            string query = "DELETE FROM documents WHERE id=" + id + ";";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -253,8 +253,37 @@ namespace WpfApplication1
                 {
                     MessageBox.Show(ex.Message);
                 }
-                this.CloseConnection();
+                finally
+                {
+                    CloseConnection();
+                }
                 return tab;
+            }
+            else return null;
+        }
+
+        public Activite SelectActivity(int activityID)
+        {
+            string query = "SELECT * FROM activities WHERE id =" + activityID + ";";
+
+            if (this.OpenConnection() == true)
+            {
+                SqlCommand cmd = new SqlCommand(query, connection);
+                Activite a = null;
+                try
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read()) a = new Activite(activityID, reader.GetString(1), reader.GetString(2));
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    CloseConnection();
+                }
+                return a;
             }
             else return null;
         }
@@ -262,6 +291,37 @@ namespace WpfApplication1
         public List<Tache> SelectTasks(int userId, int ActiviteId)
         {
             string query = "SELECT * FROM tasks WHERE id_user =" + userId + " AND id_activity=" + ActiviteId + ";";
+            if (OpenConnection() == true)
+            {
+                SqlCommand cmd = new SqlCommand(query, connection);
+                List<Tache> tab = null;
+                try
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    tab = new List<Tache>();
+                    while (reader.Read())
+                    {
+                        Tache t = new Tache(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3),reader.GetDateTime(4), reader.GetString(5));
+                        tab.Add(t);
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Error :" + ex.Message);
+                }
+                finally
+                {
+                    MessageBox.Show("Closing connection");
+                    CloseConnection();
+                }
+                return tab;
+            }
+            else return null;
+        }
+
+        public List<Tache> SelectTasks(int userId)
+        {
+            string query = "SELECT * FROM tasks WHERE id_user =" + userId + ";";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -272,29 +332,47 @@ namespace WpfApplication1
                     tab = new List<Tache>();
                     while (reader.Read())
                     {
-                        Tache t = new Tache(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetString(4));
-                        try
-                        {
-                            t.Documents = SelectTaskDocuments(userId,reader.GetInt32(6));
-                        }
-                        catch (System.Data.SqlTypes.SqlNullValueException)
-                        {
-                            MessageBox.Show("No Document");
-                        }
-                        finally
-                        {
-                            tab.Add(t);
-                        }
+                        Tache t = new Tache(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3),reader.GetDateTime(4), reader.GetString(5));
+                        tab.Add(t);
                     }
                 }
                 catch (SqlException ex)
                 {
                     MessageBox.Show("Error :" + ex.Message);
                 }
+                finally
+                {
+                    CloseConnection();
 
-
-                this.CloseConnection();
+                }
                 return tab;
+
+            }
+            else return null;
+        }
+
+        public Tache SelectTask(int taskId)
+        {
+            string query = "SELECT * FROM documents WHERE id =" + taskId + ";";
+            if (this.OpenConnection() == true)
+            {
+                SqlCommand cmd = new SqlCommand(query, connection);
+                Tache d = null;
+                try
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read()) d = new Tache(taskId, reader.GetString(1), reader.GetString(2), reader.GetDateTime(3),reader.GetDateTime(4), reader.GetString(5));
+
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    CloseConnection();
+                }
+                return d;
             }
             else return null;
         }
@@ -316,7 +394,10 @@ namespace WpfApplication1
                 {
                     MessageBox.Show(ex.Message);
                 }
-                this.CloseConnection();
+                finally
+                {
+                    CloseConnection();
+                }
                 return d;
             }
             else return null;
@@ -333,20 +414,20 @@ namespace WpfApplication1
                 {
                     SqlDataReader reader = cmd.ExecuteReader();
                     tab = new List<Document>();
-                    int i = 0;
+                    
                     while (reader.Read())
                     {
                         tab.Add(new Document(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
-                        i++;
                     }
                 }
                 catch (SqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-
-                this.CloseConnection();
+                finally
+                {
+                    CloseConnection();
+                }
                 return tab;
             }
             else return null;
@@ -363,20 +444,19 @@ namespace WpfApplication1
                 {
                     SqlDataReader reader = cmd.ExecuteReader();
                     tab = new List<Document>();
-                    int i = 0;
                     while (reader.Read())
                     {
                         tab.Add(new Document(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
-                        i++;
                     }
                 }
                 catch (SqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-
-                this.CloseConnection();
+                finally
+                {
+                    CloseConnection();
+                }
                 return tab;
             }
             else return null;
@@ -393,20 +473,19 @@ namespace WpfApplication1
                 {
                     SqlDataReader reader = cmd.ExecuteReader();
                     tab = new List<Document>();
-                    int i = 0;
                     while (reader.Read())
                     {
                         tab.Add(new Document(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
-                        i++;
                     }
                 }
                 catch (SqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-
-                this.CloseConnection();
+                finally
+                {
+                    CloseConnection();
+                }
                 return tab;
             }
             else return null;
@@ -423,11 +502,9 @@ namespace WpfApplication1
                 {
                     SqlDataReader reader = cmd.ExecuteReader();
                     tab = new List<Contact>();
-                    int i = 0;
                     while (reader.Read())
                     {
                         tab.Add(new Contact(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5)));
-                        i++;
                     }
 
                 }
@@ -435,8 +512,10 @@ namespace WpfApplication1
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-                this.CloseConnection();
+                finally
+                {
+                    CloseConnection();
+                }
                 return tab;
             }
             else return null;
@@ -455,26 +534,18 @@ namespace WpfApplication1
                     tab = new List<Evenement>();
                     while (reader.Read())
                     {
-                        Evenement e = new Evenement(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetString(4));
-                        try
-                        {
-                            e.Documents = SelectEventDocuments(userID,reader.GetInt32(6));
-                        }
-                        catch (System.Data.SqlTypes.SqlNullValueException)
-                        {
-                            MessageBox.Show("No Document");
-                        }
-                        finally
-                        {
-                            tab.Add(e);
-                        }
+                        Evenement e = new Evenement(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetDateTime(4),reader.GetString(5));
+                        tab.Add(e);
                     }
                 }
                 catch (SqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-                this.CloseConnection();
+                finally
+                {
+                    CloseConnection();
+                }
                 return tab;
             }
             else return null;
@@ -491,19 +562,19 @@ namespace WpfApplication1
                 {
                     SqlDataReader reader = cmd.ExecuteReader();
                     tab = new List<Vacance>();
-                    int i = 0;
                     while (reader.Read())
                     {
                         tab.Add(new Vacance(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2)));
-                        i++;
                     }
                 }
                 catch (SqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-                this.CloseConnection();
+                finally
+                {
+                    CloseConnection();
+                }
                 return tab;
             }
             else return null;
@@ -522,15 +593,17 @@ namespace WpfApplication1
                     tab = new List<Utilisateur>();
                     while (reader.Read())
                     {
-                        tab.Add(new Utilisateur(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4)));
-
+                        tab.Add(new Utilisateur(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3),reader.GetInt32(4)));
                     }
                 }
                 catch (SqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-                this.CloseConnection();
+                finally
+                {
+                    CloseConnection();
+                }
                 return tab;
             }
             else return null;
@@ -539,7 +612,7 @@ namespace WpfApplication1
 
         public Utilisateur SelectUser(Utilisateur u)
         {
-            string query = "SELECT * FROM users WHERE nom = '" + u.Nom + "' AND prenom = '" + u.Prenom + "' AND password = '" + u.Mot_de_passe + "' ;";   
+            string query = "SELECT * FROM users WHERE nom = '" + u.Nom + "' AND prenom = '" + u.Prenom + "' AND password = '" + u.Mot_de_passe + "' ;";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -549,13 +622,13 @@ namespace WpfApplication1
                     SqlDataReader reader = cmd.ExecuteReader();
                     reader.Read();
                     return user = new Utilisateur(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4));
-                    
+
                 }
                 catch (SqlException ex)
                 {
                     return null;
                 }
-                this.CloseConnection();                
+                this.CloseConnection();
             }
             else return null;
         }
@@ -608,7 +681,7 @@ namespace WpfApplication1
 
         public void Update(Tache a)
         {
-            string query = "UPDATE tasks SET designation='" + a.Designation + "' , priority='" + a.Priorite + "' , date='" + a.Date.Year + "-" + a.Date.Month + "-" + a.Date.Day + " " + a.Date.TimeOfDay + "' , state='" + a.Etat + "' WHERE id=" + a.Id + ";";
+            string query = "UPDATE tasks SET designation='" + a.designation + "' , priority='" + a.priorite + "' , date='" + a.dateDebut.Year + "-" + a.dateDebut.Month + "-" + a.dateDebut.Day + " " + a.dateDebut.TimeOfDay + "' , state='" + a.etat + "' WHERE id=" + a.id + ";";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -630,7 +703,7 @@ namespace WpfApplication1
 
         public void Update(Utilisateur u)
         {
-            string query = "UPDATE users SET nom =  '" + u.Nom + "' , prenom='" + u.Prenom + "' , password =  '" + u.Mot_de_passe + "' , avatar ='"+ u.avatar + "' WHERE id=" + u.Id + ";";
+            string query = "UPDATE users SET nom =  '" + u.Nom + "' , prenom='" + u.Prenom + "' , password =  '" + u.Mot_de_passe + "' WHERE id=" + u.Id + ";";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -641,7 +714,7 @@ namespace WpfApplication1
 
         public void Update(Evenement a)
         {
-            string query = "UPDATE tasks SET designation =  '" + a.Designation + "' , priority='" + a.Priorite + "' , date = '" + a.Date.Year + "-" + a.Date.Month + "-" + a.Date.Day + " " + a.Date.TimeOfDay + "' , state = '" + a.Lieu + "' WHERE id=" + a.Id + ";";
+            string query = "UPDATE tasks SET designation =  '" + a.designation + "' , priority='" + a.priorite + "' , date = '" + a.dateDebut.Year + "-" + a.dateDebut.Month + "-" + a.dateDebut.Day + " " + a.dateDebut.TimeOfDay + "' , dateFin = '" + a.dateFin.Year + "-" + a.dateFin.Month + "-" + a.dateFin.Day + " " + a.dateFin.TimeOfDay + "' , state = '" + a.lieu + "' WHERE id=" + a.id + ";";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -660,7 +733,6 @@ namespace WpfApplication1
                 this.CloseConnection();
             }
         }
-
 
     }
 
