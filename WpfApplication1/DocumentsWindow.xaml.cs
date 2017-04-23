@@ -200,7 +200,12 @@ namespace WpfApplication1
            // this.Close();
         }
 
-
+        private void versCalandar(object sender, MouseButtonEventArgs e)
+        {
+            Calandrier win = new Calandrier();
+            win.Show();
+            this.Close();
+        }
     }
 }
 

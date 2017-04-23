@@ -21,6 +21,10 @@ namespace WpfApplication1
     {
 
         int userId;
+        WeeklyView weekView = new WeeklyView();
+        MonthView monthView = new MonthView();
+        DailyView dayView = new DailyView();
+
         public Calandrier()
         {
             InitializeComponent();
@@ -29,13 +33,17 @@ namespace WpfApplication1
             string url = @"img\Person" + App.Current.Resources["avatar"].ToString() + ".png";
             avatar.Source = new BitmapImage(new Uri(url, UriKind.Relative));
 
+            weekView.currentDay = DateTime.Today;
+            weekView.DisplayWeek(weekView.currentDay);
+            dayView.currentDay = DateTime.Today;
+            dayView.DisplayDay(dayView.currentDay);
 
-            //DailyView calandar = new DailyView();
+            calandar_frame.NavigationService.Navigate(monthView);
+            day.Opacity = 1;
+            month.Opacity = 0.7;
+            week.Opacity = 1;
 
-            WeeklyView calandar = new WeeklyView();
-            calandar.currentDay = DateTime.Today;
-            calandar.DisplayWeek(calandar.currentDay);
-            calandar_frame.NavigationService.Navigate(calandar);
+
         }
 
         private void drag(object sender, MouseButtonEventArgs e)
@@ -130,6 +138,35 @@ namespace WpfApplication1
             this.Close();
         }
 
-        
+        private void afficher_jours(object sender, RoutedEventArgs e)
+        {           
+            calandar_frame.NavigationService.Navigate(dayView);
+            day.Opacity = 0.7;
+            month.Opacity = 1;
+            week.Opacity = 1;
+        }
+
+        private void afficher_semaines(object sender, RoutedEventArgs e)
+        {
+            calandar_frame.NavigationService.Navigate(weekView);
+            day.Opacity = 1;
+            month.Opacity = 1;
+            week.Opacity = 0.7;
+        }
+
+        private void afficher_mois(object sender, RoutedEventArgs e)
+        {
+            calandar_frame.NavigationService.Navigate(monthView);
+            day.Opacity = 1;
+            month.Opacity = 0.7;
+            week.Opacity = 1;
+        }
+
+        private void versHome(object sender, MouseButtonEventArgs e)
+        {
+            Window win = new home(this, 0);
+            win.Show();
+            this.Close();
+        }
     }
 }

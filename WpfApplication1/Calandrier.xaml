@@ -126,7 +126,7 @@
         <Rectangle x:Name="minimizeBtn" ToolTip="Minimiser la fenêtre" ToolTipService.ShowDuration="2000" Height="40" VerticalAlignment="Top" Margin="1208,0,0,0" Panel.ZIndex="0" HorizontalAlignment="Left" Width="38" MouseEnter="mouseEnterMinimize" MouseLeave="mouseLeaveMinimize" Opacity="0" Fill="Black" MouseUp="minimizeWindow"/>
         <Rectangle x:Name="closeBtnBack" ToolTip="Fermer la fenêtre" ToolTipService.ShowDuration="2000" Height="40" VerticalAlignment="Top" MouseEnter="mouseEnter" MouseLeave="mouseLeave" Opacity="0" Fill="White" HorizontalAlignment="Right" Width="35" Margin="0,0,-1,0" MouseUp="close"/>
 
-        <Image x:Name="homeIcon" Source="icons/homeIcon.png" ToolTip="Acceuil" ToolTipService.ShowDuration="2000" Height="80" Width="80" HorizontalAlignment="Left" Margin="335,70,0,0" VerticalAlignment="Top" Panel.ZIndex="1" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="homeIcon" Source="icons/homeIcon.png" ToolTip="Acceuil" ToolTipService.ShowDuration="2000" Height="80" Width="80" HorizontalAlignment="Left" Margin="335,70,0,0" VerticalAlignment="Top" Panel.ZIndex="1" RenderTransformOrigin="0.5,0.5" MouseUp="versHome">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -212,11 +212,11 @@
             <Label x:Name="cnctdUser"  Margin="0" Foreground="White" Width="228" FontSize="14" BorderBrush="{x:Null}" FontWeight="Bold" Cursor="Hand" Height="42" MouseLeftButtonUp="showMenu" RenderTransformOrigin="0.478,-0.833" Content="hamoul khaled" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 
         </StackPanel>
-       <Frame  x:Name="calandar_frame" Margin="272,211,0,0" Background="White"/>
+        <Frame  x:Name="calandar_frame" Margin="272,211,0,0" NavigationUIVisibility="Hidden" Background="White"/>
 
-        <Button x:Name="day" Content="Jours" Click="afficher_jours" Margin="0,175,0,0" VerticalAlignment="Top" Height="38" HorizontalAlignment="Right" Width="336" Panel.ZIndex="2"/>
-        <Button x:Name="week" Content="Semaines" Click="afficher_semaines" Margin="608,175,336,0" VerticalAlignment="Top" Height="38"/>
-        <Button x:Name="month" Content="Mois" Click="afficher_mois" Margin="272,175,0,0" VerticalAlignment="Top" Height="38" HorizontalAlignment="Left" Width="336"/>
+        <Button x:Name="day" Content="Jours" Margin="0,175,0,0" VerticalAlignment="Top" Height="38" HorizontalAlignment="Right" Width="336" Panel.ZIndex="2" Click="afficher_jours"/>
+        <Button x:Name="week" Content="Semaines" Margin="608,175,336,0" VerticalAlignment="Top" Height="38" Click="afficher_semaines"/>
+        <Button x:Name="month" Content="Mois" Margin="272,175,0,0" VerticalAlignment="Top" Height="38" HorizontalAlignment="Left" Width="336" Click="afficher_mois"/>
 
     </Grid>
 </Window>

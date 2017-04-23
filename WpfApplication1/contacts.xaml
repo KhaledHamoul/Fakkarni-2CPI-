@@ -210,7 +210,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Border x:Name="eventBorder" ToolTip="Planning" ToolTipService.ShowDuration="2000" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="545,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000"/>
+        <Border x:Name="eventBorder" ToolTip="Planning" ToolTipService.ShowDuration="2000" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="545,70,0,0" VerticalAlignment="Top" Width="80" Background="#00000000" MouseUp="versCalandar"/>
         <Image x:Name="contactIcon" Source="icons/contactIcon.png" Height="80" Width="80" Margin="0,70,460,0" VerticalAlignment="Top" HorizontalAlignment="Right" d:LayoutOverrides="Height" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>

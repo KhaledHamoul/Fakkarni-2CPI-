@@ -432,6 +432,13 @@ namespace WpfApplication1
             win.Show();
             this.Close();
         }
+
+        private void versCalandar(object sender, MouseButtonEventArgs e)
+        {
+            Calandrier win = new Calandrier();
+            win.Show();
+            this.Close();
+        }
     }
 
 
