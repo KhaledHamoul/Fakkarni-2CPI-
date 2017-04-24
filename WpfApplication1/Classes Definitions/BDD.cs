@@ -132,7 +132,7 @@ namespace WpfApplication1
 
         public void Insert(Utilisateur u)
         {
-            string query = "INSERT INTO users (nom,prenom,password) VALUES ('" + u.Nom + "','" + u.Prenom + "','" + u.Mot_de_passe + "');";
+            string query = "INSERT INTO users (nom,prenom,password,avatar) VALUES ('" + u.Nom + "','" + u.Prenom + "','" + u.Mot_de_passe + "','" + u.avatar + "');";
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
