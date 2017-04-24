@@ -586,11 +586,11 @@ namespace WpfApplication1
             if (this.OpenConnection() == true)
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
-                List<Utilisateur> tab = null;
+                List<Utilisateur> tab = new List<Utilisateur>(); 
                 try
                 {
                     SqlDataReader reader = cmd.ExecuteReader();
-                    tab = new List<Utilisateur>();
+                  
                     while (reader.Read())
                     {
                         tab.Add(new Utilisateur(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3),reader.GetInt32(4)));
